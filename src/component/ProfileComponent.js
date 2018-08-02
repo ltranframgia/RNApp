@@ -2,7 +2,8 @@ import React, {Component} from 'react';
 import { Navigation } from 'react-native-navigation';
 import {Platform, StyleSheet, Text, View, Button} from 'react-native';
 
-import { goToLoginScreen } from '../config/screens';
+import { goToLoginScreen } from '../navigation/root';
+import { pushProfile, showModalProfile } from '../navigation/profile';
 
 const loadingText = Platform.select({
   ios: 'Profile',
@@ -16,44 +17,11 @@ export default class ProfileComponent extends Component{
   }
 
   touchOnProfileDetailButtonAction = () => {
-    Navigation.push(this.props.componentId, {
-      component: {
-        name: 'ProfileScreen',
-        passProps: {
-          text: 'Pushed screen'
-        },
-        options: {
-          topBar: {
-            title: {
-              text: 'Pushed screen title'
-            }
-          }
-        }
-      }
-    });
+    pushProfile(this.props.componentId)
   }
 
   touchOnProfileEditButtonAction = () => {
-    Navigation.showModal({
-      stack: {
-        children: [{
-          component: {
-            name: 'ProfileScreen',
-            passProps: {
-              text: 'stack with one child'
-            },
-            options: {
-              topBar: {
-                title: {
-                  text: 'Modal'
-                }
-              }
-            }
-          }
-        }]
-      }
-    });
-    
+    showModalProfile()    
   }
 
   touchOnDismissButtonAction = () => {

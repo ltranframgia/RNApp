@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import {Platform, StyleSheet, Text, View, Button} from 'react-native';
-import { goToHomeScreen, goToLoginScreen } from '../config/screens';
+import { goToHomeScreen, goToLoginScreen } from '../navigation/root';
 
 const loadingText = Platform.select({
   ios: 'Loading...',
