@@ -1,7 +1,9 @@
+import React, { Component } from 'react';
 import { Navigation } from 'react-native-navigation';
+import { Provider } from 'react-redux';
 
 // Component
-import LaunchComponent from '../component/LaunchComponent'
+import LaunchContainer from '../containers/LauncherContrainer'
 import HomeComponent from '../component/HomeComponent'
 import ProfileComponent from '../component/ProfileComponent'
 import LoginComponent from '../component/LoginComponent'
@@ -10,7 +12,7 @@ import LoginComponent from '../component/LoginComponent'
 export const Screen = {
   Launch: {
     name: 'LaunchScreen',
-    component: LaunchComponent,
+    container: LaunchContainer,
   },
   Home: {
     name: 'HomeScreen',
@@ -27,9 +29,21 @@ export const Screen = {
 };
 
 // register screens
-export function registerScreens() {
-  Navigation.registerComponent(Screen.Launch.name, () => Screen.Launch.component);
-  Navigation.registerComponent(Screen.Login.name, () => Screen.Login.component);
-  Navigation.registerComponent(Screen.Home.name, () => Screen.Home.component);
-  Navigation.registerComponent(Screen.Profile.name, () => Screen.Profile.component);
+export function registerScreensWithStore(store) {
+  Navigation.registerComponent(Screen.Launch.name, () => createComponentWithStore(Screen.Launch.container, store));
+  Navigation.registerComponent(Screen.Login.name, () => createComponentWithStore(Screen.Login.component, store));
+  Navigation.registerComponent(Screen.Home.name, () => createComponentWithStore(Screen.Home.component, store));
+  Navigation.registerComponent(Screen.Profile.name, () => createComponentWithStore(Screen.Profile.component, store));
+}
+
+function createComponentWithStore(Container, store) {
+  return class App extends Component {
+    render() {
+      return (
+        <Provider store={store}>
+          <Container />
+        </Provider>
+      )
+    }
+  }
 }

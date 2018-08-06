@@ -14,13 +14,14 @@ export default class LaunchComponent extends Component{
   }
 
   touchOnLoginButtonAction = () => {
-    goToLoginScreen()
+    // goToLoginScreen()
+    this.props.addCounter('a')
   }
 
   render() {
     return (
       <View style={styles.container}>
-        <Text style={styles.instructions}>{loadingText}</Text>
+        <Text style={styles.instructions}>{this.props.id + " " + this.props.text}</Text>
         <Button
           title='Home'
           onPress={this.touchOnHomeButtonAction}

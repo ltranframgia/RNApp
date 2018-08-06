@@ -33,7 +33,7 @@ export default class ProfileComponent extends Component{
       <View style={styles.container}>
         <Text style={styles.instructions}>{loadingText}</Text>
         <Button
-          title='Sigout'
+          title='Signout'
           onPress={this.touchOnSigoutButtonAction}
         />
          <Button

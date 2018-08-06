@@ -1,8 +1,9 @@
 import { Navigation } from 'react-native-navigation';
-import { registerScreens } from './config/screens';
+import store from './store/store';
+import { registerScreensWithStore } from './config/screens';
 import { goToLaunchScreen } from './navigation/root';
 
-registerScreens();
+registerScreensWithStore(store);
 
 Navigation.events().registerAppLaunchedListener(() => {
   goToLaunchScreen()
