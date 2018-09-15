@@ -2,8 +2,8 @@ import { ADD_COUNTER } from '../actions/actionTypes'
 
 const initialState = {
     // articles: []
-  };
-  
+};
+
 const addCounter = (state = initialState, action) => {
     console.log(state)
     console.log(action)
@@ -12,9 +12,9 @@ const addCounter = (state = initialState, action) => {
             return {
                 ...state,
                 // {
-                    id: action.id,
-                    text: action.text,
-                    // completed: false
+                id: action.id,
+                text: action.text,
+                // completed: false
                 // }
             };
         default:

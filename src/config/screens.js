@@ -3,7 +3,7 @@ import { Navigation } from 'react-native-navigation';
 import { Provider } from 'react-redux';
 
 // Component
-import LaunchContainer from '../containers/LauncherContrainer'
+import LaunchContainer from '../containers/LaunchContrainer'
 import HomeComponent from '../component/HomeComponent'
 import ProfileComponent from '../component/ProfileComponent'
 import LoginComponent from '../component/LoginComponent'
