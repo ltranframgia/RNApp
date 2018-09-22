@@ -1,9 +1,9 @@
-import React, { Component } from 'react';
+import React, { PureComponent, createRef } from 'react';
 import { Navigation } from 'react-native-navigation';
 import { Provider } from 'react-redux';
 
 // Component
-import LaunchContainer from '../containers/LaunchContrainer'
+import LaunchContainer from '../containers/LaunchContainer'
 import HomeComponent from '../component/HomeComponent'
 import ProfileComponent from '../component/ProfileComponent'
 import LoginComponent from '../component/LoginComponent'
@@ -36,14 +36,35 @@ export function registerScreensWithStore(store) {
   Navigation.registerComponent(Screen.Profile.name, () => createComponentWithStore(Screen.Profile.component, store));
 }
 
-function createComponentWithStore(Container, store) {
-  return class App extends Component {
+function createComponentWithStore(WrappedComponent, store) {
+
+  return class App extends PureComponent {
+
+    constructor(props) {
+      super(props);
+
+      this.componentRef = createRef();
+    }
+
+    // hasMethod(method) {
+    //   return this.componentRef &&
+    //     this.componentRef.current &&
+    //     this.componentRef.current[method] &&
+    //     this.componentRef.current[method].apply;
+    // }
+
+    // onNavigationButtonPressed(...args) {
+    //   if (this.hasMethod('onNavigationButtonPressed')) {
+    //     this.componentRef.current.onNavigationButtonPressed(...args);
+    //   }
+    // }
+
     render() {
       return (
         <Provider store={store}>
-          <Container />
+          <WrappedComponent ref={this.componentRef} {...this.props} />
         </Provider>
-      )
+      );
     }
   }
-}
+};
