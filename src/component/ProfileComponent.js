@@ -10,7 +10,17 @@ const loadingText = Platform.select({
   android: 'Profile',
 });
 
-export default class ProfileComponent extends Component{
+export default class ProfileComponent extends Component {
+
+  constructor(props) {
+    super(props);
+    Navigation.events().bindComponent(this);
+  }
+
+  componentDidAppear() {
+    console.log('componentDidAppear')
+    console.log(this.props.componentId)
+  }
 
   touchOnSigoutButtonAction = () => {
     goToLoginScreen()
@@ -25,6 +35,8 @@ export default class ProfileComponent extends Component{
   }
 
   touchOnDismissButtonAction = () => {
+    console.log('touchOnDismissButtonAction')
+    console.log(this.props.componentId)
     Navigation.dismissModal(this.props.componentId);
   }
 

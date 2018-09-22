@@ -8,3 +8,11 @@ registerScreensWithStore(store);
 Navigation.events().registerAppLaunchedListener(() => {
   goToLaunchScreen()
 });
+
+Navigation.events().registerComponentDidAppearListener(({ componentId, componentName }) => {
+  // console.log('registerComponentDidAppearListener: ' + componentId + " " + componentName)
+});
+
+Navigation.events().registerComponentDidDisappearListener(({ componentId, componentName }) => {
+  // console.log('registerComponentDidAppearListener: ' + componentId + " " + componentName)
+});

@@ -1,5 +1,5 @@
 import { connect } from 'react-redux';
-import { addCounter } from '../actions/index';
+import { addCounter } from '../actions';
 
 import LaunchComponent from '../component/LaunchComponent'
 

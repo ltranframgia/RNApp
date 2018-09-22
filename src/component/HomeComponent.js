@@ -1,31 +1,28 @@
 import React, {Component} from 'react';
 import { Navigation } from 'react-native-navigation';
 import {Platform, StyleSheet, Text, View, Button} from 'react-native';
-
+import { pushProfile } from '../navigation/profile';
 
 const loadingText = Platform.select({
   ios: 'Home',
   android: 'Home',
 });
 
-export default class HomeComponent extends Component{
+export default class HomeComponent extends Component {
 
+  constructor(props) {
+    super(props);
+    Navigation.events().bindComponent(this);
+  }
+
+  componentDidAppear() {
+    console.log('componentDidAppear')
+    console.log(this.props.componentId)
+  }
+
+  
   touchOnProfileDetailButtonAction = () => {
-    Navigation.push(this.props.componentId, {
-      component: {
-        name: 'ProfileScreen',
-        passProps: {
-          text: 'Pushed screen'
-        },
-        options: {
-          topBar: {
-            title: {
-              text: 'Pushed screen title'
-            }
-          }
-        }
-      }
-    });
+    pushProfile(this.props.componentId)
   }
 
   render() {
