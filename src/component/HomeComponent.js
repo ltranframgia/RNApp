@@ -19,7 +19,6 @@ export default class HomeComponent extends Component {
     console.log('componentDidAppear')
     console.log(this.props.componentId)
   }
-
   
   touchOnProfileDetailButtonAction = () => {
     pushProfile(this.props.componentId)

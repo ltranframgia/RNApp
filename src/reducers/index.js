@@ -1,8 +1,17 @@
 import { combineReducers } from 'redux'
-import addCounter from './launchReducer'
+import appInfo from './app'
+import user from './user'
 
 const reducers = combineReducers({
-  Counter: addCounter
+  appInfo: appInfo,
+  user: user
 })
 
-export default reducers;
+const rootReducers = (state, action) => {
+  console.log('rootReducers')
+  console.log(state)
+  console.log(action)
+  return reducers(state, action);
+};
+
+export default rootReducers;

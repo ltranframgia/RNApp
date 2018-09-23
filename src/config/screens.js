@@ -30,13 +30,13 @@ export const Screen = {
 
 // register screens
 export function registerScreensWithStore(store) {
-  Navigation.registerComponent(Screen.Launch.name, () => createComponentWithStore(Screen.Launch.container, store));
-  Navigation.registerComponent(Screen.Login.name, () => createComponentWithStore(Screen.Login.component, store));
-  Navigation.registerComponent(Screen.Home.name, () => createComponentWithStore(Screen.Home.component, store));
-  Navigation.registerComponent(Screen.Profile.name, () => createComponentWithStore(Screen.Profile.component, store));
+  Navigation.registerComponent(Screen.Launch.name, () => wrapComponentWithStore(Screen.Launch.container, store));
+  Navigation.registerComponent(Screen.Login.name, () => wrapComponentWithStore(Screen.Login.component, store));
+  Navigation.registerComponent(Screen.Home.name, () => wrapComponentWithStore(Screen.Home.component, store));
+  Navigation.registerComponent(Screen.Profile.name, () => wrapComponentWithStore(Screen.Profile.component, store));
 }
 
-function createComponentWithStore(WrappedComponent, store) {
+function wrapComponentWithStore(WrappedComponent, store) {
 
   return class App extends PureComponent {
 

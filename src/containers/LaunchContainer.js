@@ -1,20 +1,23 @@
 import { connect } from 'react-redux';
-import { addCounter } from '../actions';
+import { getAppInfo, getUserInfo } from '../actions';
 
 import LaunchComponent from '../component/LaunchComponent'
 
 const mapStateToProps = state => {
+  console.log('mapStateToProps')
   console.log(state)
   return {
-    text: state.Counter.text,
-    id: state.Counter.id
+    appInfo: state.appInfo,
+    user: state.user,
+    responseError: state.appInfo.responseError
   };
 };
 
 const LaunchContainer = connect(
   mapStateToProps,
   {
-    addCounter
+    getAppInfo,
+    getUserInfo
   }
 )(LaunchComponent);
 
