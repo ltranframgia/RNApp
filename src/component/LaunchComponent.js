@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { StyleSheet, View, ActivityIndicator } from 'react-native';
+import { StyleSheet, View, Text, ActivityIndicator } from 'react-native';
 import { Navigation } from 'react-native-navigation';
 import { goToHomeScreen, goToLoginScreen } from '../navigation/root';
 
@@ -42,6 +42,7 @@ export default class LaunchComponent extends Component {
   render() {
     return (
       <View style={[styles.container, styles.horizontal]}>
+        <Text style={styles.logo}>RNApp</Text>
         <ActivityIndicator size="small" />
       </View>
       // <View style={styles.container}>
@@ -67,10 +68,15 @@ const styles = StyleSheet.create({
     // backgroundColor: 'green'
   },
   horizontal: {
-    flexDirection: 'row',
-    justifyContent: 'space-around',
-    padding: 10
-  }
+    flexDirection: 'column',
+    padding: 20
+  },
+  logo: {
+    textAlign: 'center',
+    color: 'green',
+    marginBottom: 5,
+    fontSize: 36
+  },
 })
 
 // const styles = StyleSheet.create({

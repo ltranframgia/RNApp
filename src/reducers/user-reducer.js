@@ -3,7 +3,7 @@ import { GET_USER_INFO } from '../constants/ActionTypes'
 const initialState = {
 };
 
-const userInfo = (state = initialState, action) => {
+const userReducer = (state = initialState, action) => {
     switch (action.type) {
         case GET_USER_INFO:
             return {
@@ -15,4 +15,4 @@ const userInfo = (state = initialState, action) => {
     }
 }
 
-export default userInfo
+export default userReducer

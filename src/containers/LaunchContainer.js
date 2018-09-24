@@ -6,10 +6,11 @@ import LaunchComponent from '../component/LaunchComponent'
 const mapStateToProps = state => {
   console.log('mapStateToProps')
   console.log(state)
+  const { appInfo, user } = state
   return {
-    appInfo: state.appInfo,
-    user: state.user,
-    responseError: state.appInfo.responseError
+    appInfo: appInfo,
+    user: user,
+    responseError: appInfo.responseError
   };
 };
 

@@ -3,7 +3,7 @@ import { GET_APP_INFO } from '../constants/ActionTypes'
 const initialState = {
 };
 
-const appInfo = (state = initialState, action) => {
+const appReducer = (state = initialState, action) => {
     switch (action.type) {
         case GET_APP_INFO:
             return {
@@ -15,4 +15,4 @@ const appInfo = (state = initialState, action) => {
     }
 }
 
-export default appInfo
+export default appReducer

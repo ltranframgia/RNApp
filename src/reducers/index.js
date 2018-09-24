@@ -1,10 +1,10 @@
 import { combineReducers } from 'redux'
-import appInfo from './app'
-import user from './user'
+import appReducer from './app-reducer'
+import userReducer from './user-reducer'
 
 const reducers = combineReducers({
-  appInfo: appInfo,
-  user: user
+  appInfo: appReducer,
+  user: userReducer
 })
 
 const rootReducers = (state, action) => {
