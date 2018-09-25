@@ -10,7 +10,7 @@ const mapStateToProps = state => {
   return {
     appInfo: appInfo,
     user: user,
-    responseError: appInfo.responseError
+    // responseError: appInfo.responseError
   };
 };
 

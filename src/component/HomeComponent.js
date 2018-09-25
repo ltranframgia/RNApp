@@ -16,8 +16,8 @@ export default class HomeComponent extends Component {
   }
 
   componentDidAppear() {
-    console.log('componentDidAppear')
-    console.log(this.props.componentId)
+    // console.log('componentDidAppear')
+    // console.log(this.props.componentId)
   }
   
   touchOnProfileDetailButtonAction = () => {

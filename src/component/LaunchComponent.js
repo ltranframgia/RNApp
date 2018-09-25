@@ -22,11 +22,11 @@ export default class LaunchComponent extends Component {
     console.log(this.props)
     console.log(nextProps)
     if (nextProps.appInfo !== this.props.appInfo) {
-      console.log('appInfo')
+      // console.log('appInfo')
       this.props.getUserInfo()
     }
     if (nextProps.user !== this.props.user) {
-      console.log('user')
+      // console.log('user')
       goToHomeScreen()
     }
   }

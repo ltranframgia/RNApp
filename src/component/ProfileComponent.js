@@ -18,8 +18,8 @@ export default class ProfileComponent extends Component {
   }
 
   componentDidAppear() {
-    console.log('componentDidAppear')
-    console.log(this.props.componentId)
+    // console.log('componentDidAppear')
+    // console.log(this.props.componentId)
   }
 
   touchOnSigoutButtonAction = () => {
@@ -35,8 +35,8 @@ export default class ProfileComponent extends Component {
   }
 
   touchOnDismissButtonAction = () => {
-    console.log('touchOnDismissButtonAction')
-    console.log(this.props.componentId)
+    // console.log('touchOnDismissButtonAction')
+    // console.log(this.props.componentId)
     Navigation.dismissModal(this.props.componentId);
   }
 
