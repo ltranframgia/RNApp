@@ -1,5 +1,5 @@
 import { connect } from 'react-redux';
-import { getAppInfo, getUserInfo } from '../actions';
+import { getAppInfo, getUserInfo ,cancelAppInfo} from '../actions';
 
 import LaunchComponent from '../component/LaunchComponent'
 
@@ -18,6 +18,7 @@ const LaunchContainer = connect(
   mapStateToProps,
   {
     getAppInfo,
+    cancelAppInfo,
     getUserInfo
   }
 )(LaunchComponent);
