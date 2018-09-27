@@ -1,31 +1,47 @@
 
 import NetworkManager from '../config/NetworkManager'
+import { AsyncStorage } from 'react-native';
 
-const configRequestInfo = (data, parameter) => {
+const USER_ID = 'USER_ID';
+const ACCESS_TOKEN = 'ACCESS_TOKEN';
+const REFRESH_TOKEN = 'REFRESH_TOKEN';
+
+const configRequestToken = (refresh_token) => {
   return {
-    url: '/oauth/token',
-    method: 'get',
-    data,
-    parameter,
+    url: '/token',
+    method: 'post',
+    data: {
+      refresh_token: refresh_token,
+      client_id: 'client_id',
+      client_secret: 'client_secret',
+      grant_type: 'refresh_token',
+    }
   }
 }
 
-function refreshToken() {
-  return new Promise((resolve, reject) => {
-    NetworkManager.request(configRequestInfo())
+export default {
+
+  userId: async () => await AsyncStorage.getItem(USER_ID),
+  accessToken: async () => await AsyncStorage.getItem(ACCESS_TOKEN),
+  refreshToken: async () => await AsyncStorage.getItem(REFRESH_TOKEN),
+  getToken: async () => {
+    let refresh_token = await refreshToken()
+    if (!refresh_token) {
+      Promise.reject(false)
+    }
+
+    // Request
+    NetworkManager.request(configRequestToken(refresh_token))
       .then(function (response) {
         const accessToken = response.data.access_token
         if (accessToken) {
-          resolve(true, accessToken)
+          Promise.resolve(true, accessToken)
         } else {
-          reject(false)
+          Promise.reject(false)
         }
       })
       .catch(function (error) {
-        reject(null)
+        Promise.reject(null)
       });
-  });
+  }
 }
-
-
-export default { refreshToken }
