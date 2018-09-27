@@ -1,12 +1,11 @@
-import UserManager from './UserManager.js'
-import NetworkManager from './NetworkManager.js'
-
+import NetworkManager from './NetworkManager'
 
 let unauthorizedRequestQueue = [];
 let isRefreshingToken = false;
 
 const retryHandler = async (error) => {
-  
+  console.log('retryHandler')
+
   // check if error is not 401 or is not unauthorized type
   if (!error.response) {
     return Promise.reject(error);
@@ -47,8 +46,17 @@ const retryHandler = async (error) => {
   });
 
   // create request to refresh token
+  getRefreshTokenAndCallBack()
+
+  // next
+  return newReqPromise;
+}
+
+function getRefreshTokenAndCallBack() {
   if (isRefreshingToken === false) {
     isRefreshingToken = true;
+
+    let UserManager = require('../config/UserManager')
 
     // get token
     UserManager.getToken()
@@ -68,9 +76,6 @@ const retryHandler = async (error) => {
         configAuthorizationHeader = []
       });
   }
-
-  // next
-  return newReqPromise;
 }
 
 export default { retryHandler }

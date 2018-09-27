@@ -11,9 +11,16 @@ export default class LaunchComponent extends Component {
   }
 
   componentDidAppear() {
-    setTimeout(() => {
+    // let cancel
+    // const CancelToken = axios.CancelToken;
+    // const source = CancelToken.source();
+    // setTimeout(() => {
       this.props.getAppInfo()
-    }, 3000);
+      // this.props.getAppInfo()
+      // this.props.getAppInfo()
+      // source.cancel('')
+      // this.props.cancelAppInfo()
+    // }, 3000);
   }
 
   componentWillReceiveProps(nextProps) {
@@ -21,14 +28,14 @@ export default class LaunchComponent extends Component {
     // console.log(Store.getState())
     console.log(this.props)
     console.log(nextProps)
-    if (nextProps.appInfo !== this.props.appInfo) {
-      // console.log('appInfo')
-      this.props.getUserInfo()
-    }
-    if (nextProps.user !== this.props.user) {
-      // console.log('user')
-      goToHomeScreen()
-    }
+    // if (nextProps.appInfo !== this.props.appInfo) {
+    //   // console.log('appInfo')
+    //   this.props.getUserInfo()
+    // }
+    // if (nextProps.user !== this.props.user) {
+    //   // console.log('user')
+    //   goToHomeScreen()
+    // }
   }
 
   touchOnHomeButtonAction = () => {

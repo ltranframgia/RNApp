@@ -1,6 +1,6 @@
 import { Navigation } from 'react-native-navigation';
 import store from './store/store';
-import { registerScreensWithStore } from './config/screens';
+import { registerScreensWithStore } from './index-register';
 import { goToLaunchScreen } from './navigation/root';
 
 registerScreensWithStore(store);

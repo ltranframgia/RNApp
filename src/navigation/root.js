@@ -1,12 +1,12 @@
 import { Navigation } from 'react-native-navigation';
-import { Screen } from '../config/screens';
+import ScreenName from '../containers/screens-name'
 import images from '../config/images';
 
 // goto screen functions
 export const goToLaunchScreen = () => Navigation.setRoot({
   root: {
     component: {
-      name: Screen.Launch.name
+      name: ScreenName.launch
     }
   },
 })
@@ -20,7 +20,7 @@ export const goToHomeScreen = () => Navigation.setRoot({
           stack: {
             children: [{
               component: {
-                name: Screen.Home.name,
+                name: ScreenName.home,
                 passProps: {
                   text: ''
                 },
@@ -39,7 +39,7 @@ export const goToHomeScreen = () => Navigation.setRoot({
           stack: {
             children: [{
               component: {
-                name: Screen.Profile.name,
+                name: ScreenName.profile,
                 passProps: {
                   text: 'stack with one child'
                 },
@@ -66,7 +66,7 @@ export const goToLoginScreen = () => Navigation.setRoot({
       children: [
         {
           component: {
-            name: Screen.Login.name,
+            name: ScreenName.login,
           }
         }
       ],

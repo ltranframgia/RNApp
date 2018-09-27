@@ -1,5 +1,4 @@
 import axios from 'axios';
-import { retryHandler } from './OauthHandler.js'
 
 const HeaderKey = {
   ContentType: 'Content-Type',
@@ -9,6 +8,7 @@ const HeaderKey = {
 
 const axiosInstance = axios.create();
 axiosInstance.defaults.timeout = 30000;
+// axiosInstance.defaults.baseURL = 'https://www.reddit.com';
 axiosInstance.defaults.baseURL = 'https://thl.herokuapp.com/api/v1';
 // configHeaderAuthorization('accessToken')
 
@@ -22,9 +22,11 @@ function configHeaderAuthorization(accessToken) {
 
 let usingRetrier = false
 axiosInstance.interceptors.response.use(null, function (error) {
-
+console.log('interceptors')
+console.log(error)
   if (usingRetrier) {
-    return retryHandler(error)
+    const Handler = require('./OauthHandler')
+    return Handler.retryHandler(error)
   }
 
   return Promise.reject(error)
