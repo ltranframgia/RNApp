@@ -1,5 +1,5 @@
 
-import NetworkManager from '../utils/NetworkManager'
+import NetworkManager from './NetworkManager'
 import { AsyncStorage } from 'react-native';
 
 const USER_ID = 'USER_ID';

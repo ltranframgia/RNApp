@@ -1,6 +1,6 @@
 import NetworkManager from './NetworkManager'
 
-let unauthorizedRequestQueue = [];
+let unauthorizedReqQueue = [];
 let isRefreshingToken = false;
 
 const retryHandler = async (error) => {
@@ -42,7 +42,7 @@ const retryHandler = async (error) => {
     };
 
     // add callback
-    unauthorizedRequestQueue.push(callback);
+    unauthorizedReqQueue.push(callback);
   });
 
   // create request to refresh token
@@ -56,7 +56,7 @@ function getRefreshTokenAndCallBack() {
   if (isRefreshingToken === false) {
     isRefreshingToken = true;
 
-    let UserManager = require('../config/UserManager')
+    const UserManager = require('./UserManager')
 
     // get token
     UserManager.getToken()
@@ -70,10 +70,10 @@ function getRefreshTokenAndCallBack() {
       .then(isSuccess => {
         isRefreshingToken = false;
         // request again
-        unauthorizedRequestQueue.forEach(callback =>
+        unauthorizedReqQueue.forEach(callback =>
           callback(isSuccess)
         );
-        configAuthorizationHeader = []
+        unauthorizedReqQueue = []
       });
   }
 }

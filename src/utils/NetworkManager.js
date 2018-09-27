@@ -22,8 +22,8 @@ function configHeaderAuthorization(accessToken) {
 
 let usingRetrier = false
 axiosInstance.interceptors.response.use(null, function (error) {
-console.log('interceptors')
-console.log(error)
+  console.log('interceptors')
+  console.log(error)
   if (usingRetrier) {
     const Handler = require('./OauthHandler')
     return Handler.retryHandler(error)

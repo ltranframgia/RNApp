@@ -5,10 +5,10 @@ import Screen from './containers/screens'
 
 // register screens
 export function registerScreensWithStore(store) {
-  const screens = Screen.allScreens
-  for (var key in screens) {
-    if (screens.hasOwnProperty(key)) {
-      const screen = screens[key]
+  const allScreens = Screen.allScreens
+  for (var key in allScreens) {
+    if (allScreens.hasOwnProperty(key)) {
+      const screen = allScreens[key]
       Navigation.registerComponent(screen.name, () => wrapComponentWithStore(screen.container, store));
     }
   }

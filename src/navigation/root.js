@@ -3,7 +3,7 @@ import ScreenName from '../containers/screens-name'
 import images from '../config/images';
 
 // goto screen functions
-export const goToLaunchScreen = () => Navigation.setRoot({
+export const setRootToLaunchScreen = () => Navigation.setRoot({
   root: {
     component: {
       name: ScreenName.launch
@@ -11,7 +11,7 @@ export const goToLaunchScreen = () => Navigation.setRoot({
   },
 })
 
-export const goToHomeScreen = () => Navigation.setRoot({
+export const setRootToHomeScreen = () => Navigation.setRoot({
   root: {
     bottomTabs: {
       id: 'BottomTabsId',
@@ -59,7 +59,7 @@ export const goToHomeScreen = () => Navigation.setRoot({
   }
 });
 
-export const goToLoginScreen = () => Navigation.setRoot({
+export const setRootToLoginScreen = () => Navigation.setRoot({
   root: {
     stack: {
       id: 'LoginScreen',

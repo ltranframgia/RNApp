@@ -1,4 +1,3 @@
-
 // ScreenName
 import ScreenName from './screens-name'
 

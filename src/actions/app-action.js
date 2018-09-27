@@ -1,28 +1,14 @@
-import { GET_APP_INFO, EMPTY } from '../constants/ActionTypes'
+import { GET_APP_INFO, EMPTY, dispatchAction } from '../constants/ActionTypes'
 import NetworkManager from '../utils/NetworkManager'
 import ApiConfig from '../config/api-config'
-
-const requestAppInfo = () => ({
-  type: GET_APP_INFO,
-})
-
-const receiveAppInfo = (json) => ({
-  type: `${GET_APP_INFO}_FULFILLED`,
-  payload: json
-})
-
-const receiveAppInfoError = (error) => ({
-  type: `${GET_APP_INFO}_REJECTED`,
-  payload: error
-})
 
 const cancelAppInfoError = (error) => ({
   type: `${GET_APP_INFO}_CANCELED`,
   payload: error
 })
 
-let source
 
+let source
 export function cancelAppInfo() {
   NetworkManager.cancelRequest(source, 'canceled tao thich')
   return { type: EMPTY }
@@ -31,16 +17,16 @@ export function cancelAppInfo() {
 export function getAppInfo() {
   source = NetworkManager.sourceCancel()
   return function (dispatch) {
-    dispatch(requestAppInfo())
-    NetworkManager.request(ApiConfig.app.info(null, null, source))
+    dispatchAction(dispatch, GET_APP_INFO, null, null)
+    NetworkManager.request(ApiConfig.oAuth.login({ username: 'ltranframgia', password: '12345678' }, null, source))
       .then(function (response) {
-        dispatch(receiveAppInfo(response.data))
+        dispatchAction(dispatch, GET_APP_INFO, response.data, true)
       })
       .catch(function (error) {
         if (NetworkManager.isCancel(error) === true) {
           dispatch(cancelAppInfoError(error.message))
         } else {
-          dispatch(receiveAppInfoError(error))
+          dispatchAction(dispatch, GET_APP_INFO, error, false)
         }
       });
   }

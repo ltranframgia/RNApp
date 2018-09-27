@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { StyleSheet, View, Text, ActivityIndicator } from 'react-native';
 import { Navigation } from 'react-native-navigation';
-import { goToHomeScreen, goToLoginScreen } from '../navigation/root';
+import { setRootToHomeScreen, setRootToLoginScreen } from '../navigation/root';
 
 export default class LaunchComponent extends Component {
 
@@ -39,11 +39,11 @@ export default class LaunchComponent extends Component {
   }
 
   touchOnHomeButtonAction = () => {
-    goToHomeScreen()
+    setRootToHomeScreen()
   }
 
   touchOnLoginButtonAction = () => {
-    goToLoginScreen()
+    setRootToLoginScreen()
   }
 
   render() {
