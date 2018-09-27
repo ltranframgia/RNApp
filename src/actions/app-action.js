@@ -18,7 +18,7 @@ export function getAppInfo() {
   source = NetworkManager.sourceCancel()
   return function (dispatch) {
     dispatchAction(dispatch, GET_APP_INFO, null, null)
-    NetworkManager.request(ApiConfig.oAuth.login({ username: 'ltranframgia', password: '12345678' }, null, source))
+    NetworkManager.request(ApiConfig.app.info(null, source))
       .then(function (response) {
         dispatchAction(dispatch, GET_APP_INFO, response.data, true)
       })

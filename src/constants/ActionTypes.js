@@ -8,15 +8,15 @@ export const LOGIN = 'LOGIN';
 export const LOGOUT = 'LOGOUT';
 export const REFRESH_TOKEN = 'REFRESH_TOKEN';
 
-
+// dispatch action (using for request api)
 export function dispatchAction(dispatch, type, data, success) {
-  let suffix = ""
-  if (success) {
-    if (success === true) {
-      suffix = `_${SUCCESS}`
-    } else if (success === false) {
-      suffix = `_${ERROR}`
-    }
+  let suffix = ''
+  if (success === true) {
+    suffix = `_${SUCCESS}`
+  } else if (success === false) {
+    suffix = `_${ERROR}`
+  } else if (success === CANCELED) {
+    suffix = `_${CANCELED}`
   }
 
   const type_suffix = `${type}${suffix}`

@@ -6,11 +6,11 @@ const HeaderKey = {
   Accept: 'Accept'
 }
 
+const baseURL = 'https://thl.herokuapp.com/api/v1'
 const axiosInstance = axios.create();
 axiosInstance.defaults.timeout = 30000;
-// axiosInstance.defaults.baseURL = 'https://www.reddit.com';
-axiosInstance.defaults.baseURL = 'https://thl.herokuapp.com/api/v1';
 // configHeaderAuthorization('accessToken')
+configHeaderBaseUrl(baseURL)
 
 function configHeaderAuthorization(accessToken) {
   if (accessToken) {
@@ -20,12 +20,23 @@ function configHeaderAuthorization(accessToken) {
   }
 }
 
+function configHeaderBaseUrl(baseURL) {
+  axiosInstance.defaults.baseURL = baseURL;
+}
+
 let usingRetrier = false
+axiosInstance.interceptors.request.use(function (config) {
+  // Do something before request is sent
+  // console.log('config')
+  // console.log(config)
+  return config;
+}, null);
+
+
 axiosInstance.interceptors.response.use(null, function (error) {
-  console.log('interceptors')
-  console.log(error)
+
   if (usingRetrier) {
-    const Handler = require('./OauthHandler')
+    const Handler = require('./OauthHandler').default
     return Handler.retryHandler(error)
   }
 
@@ -41,16 +52,29 @@ const isCancel = (error) => {
   return axios.isCancel(error)
 }
 
-const request = (config) => {
+const request = async (config) => {
   console.log('request ====================== ', config)
+
+  // Authentication
+  const Handler = require('./OauthHandler').default
+  await Handler.adapterHandler(!(config.needAuthentication === false))
+
+  // base url
+  if (config.needBaseUrl === false) {
+    configHeaderBaseUrl(null)
+  } else {
+    configHeaderBaseUrl(baseURL)
+  }
+
   usingRetrier = true
-  return axiosInstance({
-    method: config.method,
-    url: config.url,
-    data: config.data,
-    params: config.params,
-    cancelToken: config.cancelToken
-  });
+  return axiosInstance(config)
+  // return axiosInstance({
+  //   method: config.method,
+  //   url: config.url,
+  //   data: config.data,
+  //   params: config.params,
+  //   cancelToken: config.cancelToken
+  // });
 }
 
 const cancelRequest = (source, message) => {

@@ -17,7 +17,10 @@ export default class LaunchComponent extends Component {
     // setTimeout(() => {
       this.props.getAppInfo()
       // this.props.getAppInfo()
-      // this.props.getAppInfo()
+      this.props.login({ username: 'ltranframgia', password: '12345678' })
+      this.props.login({ username: 'ltranframgia', password: '12345678' })
+      this.props.getAppInfo()
+      this.props.getAppInfo()
       // source.cancel('')
       // this.props.cancelAppInfo()
     // }, 3000);

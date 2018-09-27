@@ -3,6 +3,24 @@ import NetworkManager from './NetworkManager'
 let unauthorizedReqQueue = [];
 let isRefreshingToken = false;
 
+// adapterHandler
+const adapterHandler = async (success) => {
+  console.log('adapterHandler')
+
+  if (success) {
+    try {
+      const accessToken = await UserManager.accessToken();
+      NetworkManager.configHeaderAuthorization(accessToken)
+    } catch (e) {
+    }
+
+  } else {
+    NetworkManager.configHeaderAuthorization()
+  }
+  return Promise.resolve(true)
+}
+
+// retryHandler
 const retryHandler = async (error) => {
   console.log('retryHandler')
 
@@ -56,7 +74,7 @@ function getRefreshTokenAndCallBack() {
   if (isRefreshingToken === false) {
     isRefreshingToken = true;
 
-    const UserManager = require('./UserManager')
+    const UserManager = require('./UserManager').default
 
     // get token
     UserManager.getToken()
@@ -78,4 +96,4 @@ function getRefreshTokenAndCallBack() {
   }
 }
 
-export default { retryHandler }
+export default { retryHandler, adapterHandler }

@@ -1,5 +1,5 @@
 import { connect } from 'react-redux';
-import { getAppInfo, getUserInfo ,cancelAppInfo} from '../actions';
+import { getAppInfo, getUserInfo ,cancelAppInfo, login} from '../actions';
 
 import LaunchComponent from '../component/LaunchComponent'
 
@@ -19,7 +19,8 @@ const LaunchContainer = connect(
   {
     getAppInfo,
     cancelAppInfo,
-    getUserInfo
+    getUserInfo,
+    login
   }
 )(LaunchComponent);
 

@@ -1,70 +1,74 @@
 
 // Router
 const app = {
-  info: (data, parameter, source) => {
+  info: (params, source) => {
     return {
-      url: '/r/frontend.json',
+      url: 'https://www.reddit.com/r/frontend.json',
       method: 'get',
+      params,
+      cancelToken: source.token,  
+      needAuthentication: false,
+      needBaseUrl: false
+    }
+  },
+}
+
+const oAuth = {
+  login: (data) => {
+    return {
+      url: '/login',
+      method: 'post',
       data,
-      parameter,
-      cancelToken: source.token,
+    }
+  },
+  logout: () => {
+    return {
+      url: '/logout',
+      method: 'post',
+    }
+  },
+  refreshToken: (refresh_token) => {
+    return {
+      url: '/token',
+      method: 'post',
+      data: {
+        refresh_token: refresh_token,
+        client_id: 'client_id',
+        client_secret: 'client_secret',
+        grant_type: 'refresh_token',
+      }
     }
   },
 }
 
 const user = {
-  me: (data, parameter) => {
+  me: (source) => {
     return {
       url: '/user/me',
       method: 'get',
-      data,
-      parameter,
-      // cancelToken: source.token,
+      cancelToken: source.token,
     }
   },
-  users: (data, parameter) => {
+  user: (id, params, source) => {
+    return {
+      url: `/user/${id}`,
+      method: 'get',
+      params,
+      cancelToken: source.token,
+    }
+  },
+  users: (params, source) => {
     return {
       url: '/users',
       method: 'get',
-      data,
-      parameter,
-      // cancelToken: source.token,
+      params,
+      cancelToken: source.token,
     }
   }
 }
 
-const oAuth = {
-  login: (data, parameter) => {
-    return {
-      url: '/login',
-      method: 'post',
-      data,
-      parameter,
-      // cancelToken: source.token,
-    }
-  },
-  logout: (data, parameter) => {
-    return {
-      url: '/logout',
-      method: 'post',
-      data,
-      parameter,
-      // cancelToken: source.token,
-    }
-  },
-  refreshToken: (data, parameter) => {
-    return {
-      url: '/token',
-      method: 'post',
-      data,
-      parameter,
-      // cancelToken: source.token,
-    }
-  },
-}
-
 export default {
   app,
+  oAuth,
   user,
-  oAuth
 }
