@@ -2,7 +2,7 @@ import { Navigation } from 'react-native-navigation';
 import store from './store/store';
 import { registerScreensWithStore } from './index-register';
 import { setRootToLaunchScreen } from './navigation/root';
-import Reachability from './utils/reachability/Reachability'
+import { Reachability } from './utils'
 
 registerScreensWithStore(store);
 

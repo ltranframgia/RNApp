@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { Navigation } from 'react-native-navigation';
 import { Platform, StyleSheet, SafeAreaView, Text, View, Button } from 'react-native';
-import ReachabilityContainer from '../utils/reachability/ReachabilityContainer'
+import { ReachabilityView } from '../utils'
 
 import { pushProfile } from '../navigation/profile';
 
@@ -29,7 +29,7 @@ export default class HomeComponent extends Component {
   render() {
     return (
       <SafeAreaView style={styles.container}>
-        <ReachabilityContainer/>
+        <ReachabilityView/>
         <Text style={styles.instructions}>{loadingText}</Text>
         <Button
           title='Detail'
