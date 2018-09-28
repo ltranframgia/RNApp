@@ -1,6 +1,7 @@
 import { Navigation } from 'react-native-navigation';
 import ScreenName from '../containers/screens-name'
 import images from '../config/images';
+import colors from '../config/colors';
 
 // goto screen functions
 export const setRootToLaunchScreen = () => Navigation.setRoot({
@@ -48,9 +49,74 @@ export const setRootToHomeScreen = () => Navigation.setRoot({
             }],
             options: {
               bottomTab: {
-                text: 'Home',
+                text: 'ダッシュボード',
                 fontSize: 12,
-                icon: images.signin
+                icon: images.tab_newsfeed,
+                selectedIcon: images.tab_newsfeed_active,
+                selectedTextColor: colors.blue
+              }
+            }
+          }
+        },
+        {
+          stack: {
+            children: [{
+              component: {
+                name: ScreenName.home,
+                passProps: {
+                  text: ''
+                },
+              }
+            }],
+            options: {
+              bottomTab: {
+                text: 'カレンダー',
+                fontSize: 12,
+                icon: images.tab_schedule,
+                selectedIcon: images.tab_schedule_active,
+                selectedTextColor: colors.blue
+              }
+            }
+          }
+        },
+        {
+          stack: {
+            children: [{
+              component: {
+                name: ScreenName.home,
+                passProps: {
+                  text: ''
+                },
+              }
+            }],
+            options: {
+              bottomTab: {
+                text: '案件一覧',
+                fontSize: 12,
+                icon: images.tab_project,
+                selectedIcon: images.tab_project_active,
+                selectedTextColor: colors.blue
+              }
+            }
+          }
+        },
+        {
+          stack: {
+            children: [{
+              component: {
+                name: ScreenName.home,
+                passProps: {
+                  text: ''
+                },
+              }
+            }],
+            options: {
+              bottomTab: {
+                text: 'お知らせ',
+                fontSize: 12,
+                icon: images.tab_notification,
+                selectedIcon: images.tab_notification_active,
+                selectedTextColor: colors.blue
               }
             }
           }
@@ -67,9 +133,11 @@ export const setRootToHomeScreen = () => Navigation.setRoot({
             }],
             options: {
               bottomTab: {
-                text: 'Setting',
+                text: 'プロフィール',
                 fontSize: 12,
-                icon: images.signup
+                icon: images.tab_profile,
+                selectedIcon: images.tab_profile_active,
+                selectedTextColor: colors.blue
               }
             }
           }
