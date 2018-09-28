@@ -1,12 +1,10 @@
 
 // Router
 const app = {
-  info: (params, source) => {
+  info: () => {
     return {
       url: 'https://www.reddit.com/r/frontend.json',
       method: 'get',
-      params,
-      cancelToken: source.token,  
       needAuthentication: false,
       needBaseUrl: false
     }
@@ -41,17 +39,17 @@ const oAuth = {
   },
 }
 
-const user = {
+const users = {
   me: (source) => {
     return {
-      url: '/user/me',
+      url: '/users/me',
       method: 'get',
       cancelToken: source.token,
     }
   },
   user: (id, params, source) => {
     return {
-      url: `/user/${id}`,
+      url: `/users/${id}`,
       method: 'get',
       params,
       cancelToken: source.token,
@@ -70,5 +68,5 @@ const user = {
 export default {
   app,
   oAuth,
-  user,
+  users,
 }

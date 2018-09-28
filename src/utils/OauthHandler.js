@@ -37,7 +37,7 @@ const retryHandler = async (error) => {
   const orgConfig = error.config;
 
   // check if orgConfig contain Authorization key
-  if (!orgConfig.headers[HeaderKey.Authorization]) {
+  if (!orgConfig.headers['Authorization']) {
     return Promise.reject(error);
   }
 
@@ -48,14 +48,14 @@ const retryHandler = async (error) => {
 
     const callback = async (success) => {
       if (success !== true) {
-        reject(error)
+        return reject(error)
       }
 
       try {
         const resp = await NetworkManager.request(orgConfig);
-        resolve(resp);
+        return resolve(resp);
       } catch (e) {
-        reject(e);
+        return reject(e);
       }
     };
 

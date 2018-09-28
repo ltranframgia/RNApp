@@ -34,7 +34,7 @@ export default {
   getToken: async () => {
     let refresh_token = await refreshToken()
     if (!refresh_token) {
-      Promise.reject(false)
+      return Promise.reject(false)
     }
 
     // Request
@@ -42,13 +42,13 @@ export default {
       .then(function (response) {
         const accessToken = response.data.access_token
         if (accessToken) {
-          Promise.resolve(true, accessToken)
+          return Promise.resolve(true, accessToken)
         } else {
-          Promise.reject(false)
+          return Promise.reject(false)
         }
       })
       .catch(function (error) {
-        Promise.reject(null)
+        return Promise.reject(null)
       });
   }
 }

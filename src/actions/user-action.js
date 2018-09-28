@@ -19,7 +19,7 @@ export function getMyInfo() {
   source = NetworkManager.sourceCancel()
   return function (dispatch) {
     dispatchAction(dispatch, GET_USER_INFO)
-    NetworkManager.request(ApiConfig.oAuth.login({ username: 'ltranframgia', password: '12345678' }, null, source))
+    NetworkManager.request(ApiConfig.users.me(source))
       .then(function (response) {
         dispatchAction(dispatch, GET_USER_INFO, response.data, true)
       })

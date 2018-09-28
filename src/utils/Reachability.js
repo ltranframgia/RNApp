@@ -1,4 +1,5 @@
 import { NetInfo } from 'react-native';
+const CONNECTION_CHANGE = 'CONNECTION_CHANGE';
 
 let isConnected = false;
 
@@ -8,7 +9,7 @@ const listen = () => {
 }
 
 const removeListener = () => {
-  // listen
+  // removeListener
   NetInfo.removeEventListener('connectionChange', this.handleConnectionChange)
 }
 
@@ -20,7 +21,7 @@ handleConnectionChange = (connectionChange) => {
 
     let data = { ...connectionChange, isConnected: isConnected }
     const action = () => ({
-      type: 'CONNECTION_CHANGE',
+      type: CONNECTION_CHANGE,
       payload: data
     })
 
@@ -30,4 +31,4 @@ handleConnectionChange = (connectionChange) => {
 
 };
 
-export default { listen, removeListener, isConnected }
+export default { listen, removeListener, isConnected, CONNECTION_CHANGE }
