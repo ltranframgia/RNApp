@@ -35,7 +35,6 @@ export const setRootToLoginScreen = () => Navigation.setRoot({
 export const setRootToHomeScreen = () => Navigation.setRoot({
   root: {
     bottomTabs: {
-      id: 'BottomTabsId',
       children: [
         {
           stack: {
@@ -83,7 +82,7 @@ export const setRootToHomeScreen = () => Navigation.setRoot({
           stack: {
             children: [{
               component: {
-                name: ScreenName.home,
+                name: ScreenName.profile,
                 passProps: {
                   text: ''
                 },
@@ -127,7 +126,7 @@ export const setRootToHomeScreen = () => Navigation.setRoot({
               component: {
                 name: ScreenName.profile,
                 passProps: {
-                  text: 'stack with one child'
+                  text: ''
                 },
               }
             }],

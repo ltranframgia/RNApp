@@ -9,13 +9,12 @@ const loadingText = Platform.select({
 export default class ReachabilityCompenent extends Component {
 
   render() {
-    let color = 'red';
     if (this.props.netInfo.isConnected == true) {
-      color = 'yellow'
+      return null
     }
 
     return (
-      <View style={[styles.container, { backgroundColor: color }]} >
+      <View style={styles.container} >
         <Text style={styles.instructions}>{loadingText}</Text>
       </ View>
     );
