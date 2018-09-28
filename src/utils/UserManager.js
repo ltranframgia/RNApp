@@ -19,16 +19,16 @@ export default {
         const value = await AsyncStorage.getItem(ACCESS_TOKEN);
         if (value !== null) {
           accessToken = value
-          Promise.resolve(accessToken)
+          return Promise.resolve(accessToken)
         } else {
-          Promise.reject()
+          return Promise.reject()
         }
       } catch (error) {
-        Promise.reject()
+        return Promise.reject()
       }
     }
 
-    Promise.resolve(accessToken)
+    return Promise.resolve(accessToken)
   },
   refreshToken: async () => await AsyncStorage.getItem(REFRESH_TOKEN),
   getToken: async () => {
