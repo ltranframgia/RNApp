@@ -6,6 +6,7 @@ import Screen from './containers/screens'
 // register screens
 export function registerScreensWithStore(store) {
   const allScreens = Screen.allScreens
+  Screen.reset()
   for (var key in allScreens) {
     if (allScreens.hasOwnProperty(key)) {
       const screen = allScreens[key]

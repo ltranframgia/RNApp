@@ -13,7 +13,6 @@ const appReducer = (state = initialState, action) => {
   if (appInfo) {
     return appInfo
   }
-
   return state
 }
 

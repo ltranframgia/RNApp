@@ -8,7 +8,7 @@ import HomeComponent from '../component/HomeComponent'
 import ProfileComponent from '../component/ProfileComponent'
 
 // Screens
-const allScreens = {
+let allScreens = {
   Launch: {
     name: ScreenName.launch,
     container: LaunchContainer,
@@ -27,4 +27,8 @@ const allScreens = {
   },
 }
 
-export default { allScreens }
+function reset() {
+  allScreens = null
+}
+
+export default { allScreens, reset }

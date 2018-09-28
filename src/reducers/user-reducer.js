@@ -12,12 +12,12 @@ const userReducer = (state = initialState, action) => {
     case `${GET_USER_INFO}_${SUCCESS}`:
       return {
         ...state,
-        data: action.payload.response.data
+        ...action.payload.response.data
       };
     case `${GET_USER_INFO}_${ERROR}`:
       return {
         ...state,
-        data: action.payload.response
+        ...action.payload.response
       };
     default:
       return state

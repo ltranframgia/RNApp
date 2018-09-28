@@ -1,5 +1,4 @@
 import { NetInfo } from 'react-native';
-const CONNECTION_CHANGE = 'CONNECTION_CHANGE';
 
 let isConnected = false;
 
@@ -21,14 +20,14 @@ handleConnectionChange = (connectionChange) => {
 
     let data = { ...connectionChange, isConnected: isConnected }
     const action = () => ({
-      type: CONNECTION_CHANGE,
+      type: 'CONNECTION_CHANGE',
       payload: data
     })
 
-    const store = require('../store/store').default
+    const store = require('../../store/store').default
     store.dispatch(action())
   });
 
 };
 
-export default { listen, removeListener, isConnected, CONNECTION_CHANGE }
+export default { listen, removeListener, isConnected }

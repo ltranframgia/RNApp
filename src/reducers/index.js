@@ -1,10 +1,12 @@
 import { combineReducers } from 'redux'
 import appReducer from './app-reducer'
 import userReducer from './user-reducer'
+import reachabilityReducer from '../utils/reachability/reachability-reducer'
 
 const reducers = combineReducers({
   appInfo: appReducer,
-  user: userReducer
+  user: userReducer,
+  netInfo: reachabilityReducer,
 })
 
 const rootReducers = (state, action) => {

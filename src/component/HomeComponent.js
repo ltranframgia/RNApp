@@ -1,6 +1,8 @@
-import React, {Component} from 'react';
+import React, { Component } from 'react';
 import { Navigation } from 'react-native-navigation';
-import {Platform, StyleSheet, Text, View, Button} from 'react-native';
+import { Platform, StyleSheet, SafeAreaView, Text, View, Button } from 'react-native';
+import ReachabilityContainer from '../utils/reachability/ReachabilityContainer'
+
 import { pushProfile } from '../navigation/profile';
 
 const loadingText = Platform.select({
@@ -19,20 +21,21 @@ export default class HomeComponent extends Component {
     // console.log('componentDidAppear')
     // console.log(this.props.componentId)
   }
-  
+
   touchOnProfileDetailButtonAction = () => {
     pushProfile(this.props.componentId)
   }
 
   render() {
     return (
-      <View style={styles.container}>
+      <SafeAreaView style={styles.container}>
+        <ReachabilityContainer/>
         <Text style={styles.instructions}>{loadingText}</Text>
         <Button
           title='Detail'
           onPress={this.touchOnProfileDetailButtonAction}
         />
-      </View>
+      </SafeAreaView>
     );
   }
 }

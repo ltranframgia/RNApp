@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
-import { Platform, StyleSheet, Text, View, TextInput, Image, TouchableOpacity, KeyboardAvoidingView } from 'react-native';
+import ReachabilityContainer from '../utils/reachability/ReachabilityContainer'
+import { SafeAreaView, StyleSheet, Text, View, TextInput, Image, TouchableOpacity, KeyboardAvoidingView } from 'react-native';
 import { setRootToHomeScreen } from '../navigation/root';
 import images from '../config/images'
 import colors from '../config/colors'
@@ -16,43 +17,46 @@ export default class LoginComponent extends Component {
 
   render() {
     return (
-      <KeyboardAvoidingView style={styles.container} behavior="padding">
-        <Image
-          style={styles.logo_text}
-          resizeMode='center'
-          source={images.logo_text_blue}
-        />
-
-        <View style={{
-          paddingVertical: 20,
-          alignSelf: 'stretch',
-          // marginBottom : 50
-        }}>
-          <Text style={{
-            marginTop: 15,
-            marginHorizontal: 40,
-          }}>ID</Text>
-          <TextInput style={styles.textinput}
-            placeholder="Username"
-          />
-          <Text style={{
-            marginTop: 15,
-            marginHorizontal: 40,
-          }}>Password</Text>
-          <TextInput style={styles.textinput}
-            placeholder="Password"
-            secureTextEntry
+      <SafeAreaView style={{ flex: 1 }}>
+        <KeyboardAvoidingView style={styles.container} behavior="padding">
+          <ReachabilityContainer />
+          <Image
+            style={styles.logo_text}
+            resizeMode='center'
+            source={images.logo_text_blue}
           />
 
-          <TouchableOpacity
-            style={styles.login_button}
-            onPress={this.touchOnSiginButtonAction}>
-            <Text style={styles.login_text}>Login</Text>
-          </TouchableOpacity>
-        </View>
+          <View style={{
+            paddingVertical: 20,
+            alignSelf: 'stretch',
+            // marginBottom : 50
+          }}>
+            <Text style={{
+              marginTop: 15,
+              marginHorizontal: 40,
+            }}>ID</Text>
+            <TextInput style={styles.textinput}
+              placeholder="Username"
+            />
+            <Text style={{
+              marginTop: 15,
+              marginHorizontal: 40,
+            }}>Password</Text>
+            <TextInput style={styles.textinput}
+              placeholder="Password"
+              secureTextEntry
+            />
+
+            <TouchableOpacity
+              style={styles.login_button}
+              onPress={this.touchOnSiginButtonAction}>
+              <Text style={styles.login_text}>Login</Text>
+            </TouchableOpacity>
+          </View>
 
 
-      </KeyboardAvoidingView>
+        </KeyboardAvoidingView>
+      </SafeAreaView>
     );
   }
 }
