@@ -11,6 +11,26 @@ export const setRootToLaunchScreen = () => Navigation.setRoot({
   },
 })
 
+export const setRootToLoginScreen = () => Navigation.setRoot({
+  root: {
+    stack: {
+      children: [
+        {
+          component: {
+            name: ScreenName.login,
+          }
+        }
+      ],
+      options: {
+        topBar: {
+          visible: false
+        }
+      }
+
+    }
+  }
+})
+
 export const setRootToHomeScreen = () => Navigation.setRoot({
   root: {
     bottomTabs: {
@@ -59,17 +79,4 @@ export const setRootToHomeScreen = () => Navigation.setRoot({
   }
 });
 
-export const setRootToLoginScreen = () => Navigation.setRoot({
-  root: {
-    stack: {
-      id: 'LoginScreen',
-      children: [
-        {
-          component: {
-            name: ScreenName.login,
-          }
-        }
-      ],
-    }
-  }
-})
+

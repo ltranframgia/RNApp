@@ -3,15 +3,19 @@ import ScreenName from './screens-name'
 
 // Component
 import LaunchContainer from './LaunchContainer'
+import LoginContainer from './LoginContainer'
 import HomeComponent from '../component/HomeComponent'
 import ProfileComponent from '../component/ProfileComponent'
-import LoginComponent from '../component/LoginComponent'
 
 // Screens
 const allScreens = {
   Launch: {
     name: ScreenName.launch,
     container: LaunchContainer,
+  },
+  Login: {
+    name: ScreenName.login,
+    container: LoginContainer,
   },
   Home: {
     name: ScreenName.home,
@@ -21,10 +25,6 @@ const allScreens = {
     name: ScreenName.profile,
     container: ProfileComponent,
   },
-  Login: {
-    name: ScreenName.login,
-    container: LoginComponent,
-  }
 }
 
 export default { allScreens }

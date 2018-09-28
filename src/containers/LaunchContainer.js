@@ -1,6 +1,5 @@
 import { connect } from 'react-redux';
 import { getAppInfo, getMyInfo } from '../actions';
-
 import LaunchComponent from '../component/LaunchComponent'
 
 const mapStateToProps = state => {

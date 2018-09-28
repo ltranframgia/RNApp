@@ -1,51 +1,58 @@
-import React, {Component} from 'react';
-import { Navigation } from 'react-native-navigation';
-import {Platform, StyleSheet, Text, View, Button} from 'react-native';
-import { goToHomeScreen } from '../navigation/root';
+import React, { Component } from 'react';
+import { Platform, StyleSheet, Text, View, TextInput, Image, TouchableOpacity, KeyboardAvoidingView } from 'react-native';
+import { setRootToHomeScreen } from '../navigation/root';
+import images from '../config/images'
+import colors from '../config/colors'
 
-const loadingText = Platform.select({
-  ios: 'Login',
-  android: 'Login',
-});
-
-export default class LoginComponent extends Component{
+export default class LoginComponent extends Component {
 
   touchOnSiginButtonAction = () => {
-    goToHomeScreen()
+    setRootToHomeScreen()
   }
 
   touchOnRegisterButtonAction = () => {
-    Navigation.push(this.props.componentId, {
-      component: {
-        name: 'LoginScreen',
-        passProps: {
-          text: 'Pushed screen'
-        },
-        options: {
-          topBar: {
-            title: {
-              text: 'Pushed screen title'
-            }
-          }
-        }
-      }
-    });
+
   }
 
   render() {
     return (
-      <View style={styles.container}>
-        <Text style={styles.instructions}>{loadingText}</Text>
-        <Button
-          title='Sigin'
-          onPress={this.touchOnSiginButtonAction}
+      <KeyboardAvoidingView style={styles.container} behavior="padding">
+        <Image
+          style={styles.logo_text}
+          resizeMode='center'
+          source={images.logo_text_blue}
         />
 
-        <Button
-          title='Register'
-          onPress={this.touchOnRegisterButtonAction}
-        />
-      </View>
+        <View style={{
+          paddingVertical: 20,
+          alignSelf: 'stretch',
+          // marginBottom : 50
+        }}>
+          <Text style={{
+            marginTop: 15,
+            marginHorizontal: 40,
+          }}>ID</Text>
+          <TextInput style={styles.textinput}
+            placeholder="Username"
+          />
+          <Text style={{
+            marginTop: 15,
+            marginHorizontal: 40,
+          }}>Password</Text>
+          <TextInput style={styles.textinput}
+            placeholder="Password"
+            secureTextEntry
+          />
+
+          <TouchableOpacity
+            style={styles.login_button}
+            onPress={this.touchOnSiginButtonAction}>
+            <Text style={styles.login_text}>Login</Text>
+          </TouchableOpacity>
+        </View>
+
+
+      </KeyboardAvoidingView>
     );
   }
 }
@@ -53,18 +60,32 @@ export default class LoginComponent extends Component{
 const styles = StyleSheet.create({
   container: {
     flex: 1,
+    justifyContent: 'space-around',
+  },
+  logo_text: {
+    // position: 'absolute',
+    marginTop: 80,
+    // marginBottom: 100,
+    alignSelf: 'center'
+  },
+  textinput: {
+    marginHorizontal: 40,
+    height: 40,
+    borderColor: 'lightgray',
+    borderWidth: 1,
+    paddingLeft: 10,
+    paddingRight: 10,
+  },
+  login_button: {
+    marginTop: 20,
+    marginHorizontal: 40,
+    height: 40,
+    backgroundColor: colors.blue,
     justifyContent: 'center',
-    alignItems: 'center',
-    backgroundColor: '#F5FCFF',
   },
-  welcome: {
-    fontSize: 20,
-    textAlign: 'center',
-    margin: 10,
+  login_text: {
+    color: 'white',
+    alignSelf: 'center'
   },
-  instructions: {
-    textAlign: 'center',
-    color: '#333333',
-    marginBottom: 5,
-  },
+
 });

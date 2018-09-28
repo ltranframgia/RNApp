@@ -3,6 +3,7 @@ import { StyleSheet, View, Text, Image, ActivityIndicator } from 'react-native';
 import { Navigation } from 'react-native-navigation';
 import { setRootToHomeScreen, setRootToLoginScreen } from '../navigation/root';
 import images from '../config/images'
+import colors from '../config/colors'
 
 export default class LaunchComponent extends Component {
 
@@ -32,19 +33,12 @@ export default class LaunchComponent extends Component {
     if (nextProps.appInfo !== this.props.appInfo) {
       console.log('getMyInfo')
       this.props.getMyInfo()
+      return
     }
-    // if (nextProps.user !== this.props.user) {
-    //   // console.log('user')
-    //   goToHomeScreen()
-    // }
-  }
-
-  touchOnHomeButtonAction = () => {
-    setRootToHomeScreen()
-  }
-
-  touchOnLoginButtonAction = () => {
-    setRootToLoginScreen()
+    if (nextProps.user !== this.props.user) {
+      console.log('user ', nextProps.user)
+      setRootToLoginScreen()
+    }
   }
 
   render() {
@@ -56,7 +50,7 @@ export default class LaunchComponent extends Component {
           resizeMode='stretch'
         />
         <Image
-          style={styles.logo}
+          style={styles.logo_text}
           resizeMode='center'
           source={images.logo_text}
         />
@@ -76,11 +70,11 @@ const styles = StyleSheet.create({
     flex: 1,
     position: 'absolute',
   },
-  logo: {
+  logo_text: {
     position: 'absolute',
     alignSelf: 'center',
   },
   activityIndicator: {
-    marginTop: 80
+    marginTop: 100
   },
 })
