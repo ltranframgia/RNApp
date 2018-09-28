@@ -2,11 +2,17 @@ import { Navigation } from 'react-native-navigation';
 import store from './store/store';
 import { registerScreensWithStore } from './index-register';
 import { setRootToLaunchScreen } from './navigation/root';
+import Reachability from './utils/Reachability'
 
 registerScreensWithStore(store);
 
 Navigation.events().registerAppLaunchedListener(() => {
+
+  // setroot
   setRootToLaunchScreen()
+
+  // listen
+  Reachability.listen()
 });
 
 Navigation.events().registerComponentDidAppearListener(({ componentId, componentName }) => {
