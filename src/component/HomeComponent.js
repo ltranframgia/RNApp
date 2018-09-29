@@ -4,6 +4,7 @@ import { Platform, StyleSheet, SafeAreaView, Text, View, Button } from 'react-na
 import { ReachabilityView } from '../utils'
 
 import { pushProfile } from '../navigation/profile';
+import Colors from '../config/colors';
 
 const loadingText = Platform.select({
   ios: 'Home',
@@ -45,7 +46,7 @@ const styles = StyleSheet.create({
     flex: 1,
     justifyContent: 'center',
     alignItems: 'center',
-    backgroundColor: '#F5FCFF',
+    backgroundColor: '#1370D2',
   },
   welcome: {
     fontSize: 20,

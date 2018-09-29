@@ -53,7 +53,8 @@ export const setRootToHomeScreen = () => Navigation.setRoot({
                 icon: images.tab_newsfeed,
                 selectedIcon: images.tab_newsfeed_active,
                 selectedTextColor: colors.blue
-              }
+              },
+
             }
           }
         },
@@ -68,13 +69,24 @@ export const setRootToHomeScreen = () => Navigation.setRoot({
               }
             }],
             options: {
+              statusBar: {
+                visible: true,
+                style: 'light'
+              },
+              topBar: {
+                translucent: true,
+                transparent: true,
+                noBorder: false,
+                // blur: false,
+              },
               bottomTab: {
                 text: 'カレンダー',
                 fontSize: 12,
                 icon: images.tab_schedule,
                 selectedIcon: images.tab_schedule_active,
                 selectedTextColor: colors.blue
-              }
+              },
+              
             }
           }
         },

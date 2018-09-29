@@ -1,49 +1,25 @@
-import React, { PureComponent, createRef } from 'react';
 import { Navigation } from 'react-native-navigation';
-import { Provider } from 'react-redux';
 import Screen from './containers/screens'
+import Images from './config/images'
 
 // register screens
-export function registerScreensWithStore(store) {
+export function registerScreensWithStore(provider, store) {
   const allScreens = Screen.allScreens
   Screen.reset()
   for (var key in allScreens) {
     if (allScreens.hasOwnProperty(key)) {
       const screen = allScreens[key]
-      Navigation.registerComponent(screen.name, () => wrapComponentWithStore(screen.container, store));
+      Navigation.registerComponentWithRedux(screen.name, () => screen.container, provider, store)
     }
   }
 }
 
-function wrapComponentWithStore(WrappedComponent, store) {
-
-  return class App extends PureComponent {
-
-    constructor(props) {
-      super(props);
-
-      this.componentRef = createRef();
-    }
-
-    // hasMethod(method) {
-    //   return this.componentRef &&
-    //     this.componentRef.current &&
-    //     this.componentRef.current[method] &&
-    //     this.componentRef.current[method].apply;
-    // }
-
-    // onNavigationButtonPressed(...args) {
-    //   if (this.hasMethod('onNavigationButtonPressed')) {
-    //     this.componentRef.current.onNavigationButtonPressed(...args);
-    //   }
-    // }
-
-    render() {
-      return (
-        <Provider store={store}>
-          <WrappedComponent ref={this.componentRef} {...this.props} />
-        </Provider>
-      );
-    }
+export const defautOptions = {
+  topBar: {
+    backButton: {
+      icon: Images.back,
+      visible: true,
+      color: '#1D1E2C'
+    },
   }
-};
+}
