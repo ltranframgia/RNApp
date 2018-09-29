@@ -1,5 +1,4 @@
 const images = {
-  ic_settings: require('../assets/images/ic_settings.png'),
   tab_newsfeed: require('../assets/images/ic_tab_newsfeed.png'),
   tab_newsfeed_active: require('../assets/images/ic_tab_newsfeed_active.png'),
   tab_notification: require('../assets/images/ic_tab_notification.png'),
@@ -14,6 +13,7 @@ const images = {
   logo_text: require('../assets/images/logo_text.png'),
   logo_text_blue: require('../assets/images/logo_text_blue.png'),
   back: require('../assets/images/ic_back.png'),
+  ic_settings: require('../assets/images/ic_settings.png'),
 };
 
 export default images;

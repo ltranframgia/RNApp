@@ -7,11 +7,11 @@ import { pushProfile } from '../navigation/profile';
 import Colors from '../config/colors';
 
 const loadingText = Platform.select({
-  ios: 'Home',
-  android: 'Home',
+  ios: 'dashboard',
+  android: 'dashboard',
 });
 
-export default class HomeComponent extends Component {
+export default class DashboardComponent extends Component {
 
   constructor(props) {
     super(props);

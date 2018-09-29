@@ -2,7 +2,7 @@
 // Screens
 export default ScreenName = {
   launch: 'LaunchScreen',
-  home: 'HomeScreen',
+  dashboard: 'DashboardScreen',
   profile: 'ProfileScreen',
   login: 'LoginScreen'
 }

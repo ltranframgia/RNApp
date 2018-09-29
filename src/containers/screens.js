@@ -4,7 +4,7 @@ import ScreenName from './screens-name'
 // Component
 import LaunchContainer from './LaunchContainer'
 import LoginContainer from './LoginContainer'
-import HomeComponent from '../component/HomeComponent'
+import DashboardComponent from '../component/DashboardComponent'
 import ProfileComponent from '../component/ProfileComponent'
 
 // Screens
@@ -17,9 +17,9 @@ let allScreens = {
     name: ScreenName.login,
     container: LoginContainer,
   },
-  Home: {
-    name: ScreenName.home,
-    container: HomeComponent,
+  Dashboard: {
+    name: ScreenName.dashboard,
+    container: DashboardComponent,
   },
   Profile: {
     name: ScreenName.profile,

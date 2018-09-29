@@ -40,7 +40,7 @@ export const setRootToHomeScreen = () => Navigation.setRoot({
           stack: {
             children: [{
               component: {
-                name: ScreenName.home,
+                name: ScreenName.dashboard,
                 passProps: {
                   text: ''
                 },
@@ -62,7 +62,7 @@ export const setRootToHomeScreen = () => Navigation.setRoot({
           stack: {
             children: [{
               component: {
-                name: ScreenName.home,
+                name: ScreenName.dashboard,
                 passProps: {
                   text: ''
                 },
@@ -115,7 +115,7 @@ export const setRootToHomeScreen = () => Navigation.setRoot({
           stack: {
             children: [{
               component: {
-                name: ScreenName.home,
+                name: ScreenName.dashboard,
                 passProps: {
                   text: ''
                 },
