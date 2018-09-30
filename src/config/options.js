@@ -1,5 +1,5 @@
-import Images from './images'
-import Colors from './colors'
+import Images from '../constants/images'
+import Colors from '../constants/colors'
 
 export const defautOptions = {
   topBar: {

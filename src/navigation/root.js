@@ -1,7 +1,7 @@
 import { Navigation } from 'react-native-navigation';
-import ScreenName from '../containers/screens-name'
-import Images from '../config/images';
-import Colors from '../config/colors';
+import ScreenName from '../config/screens-name'
+import Images from '../constants/images';
+import Colors from '../constants/colors';
 
 // goto screen functions
 export const setRootToLaunchScreen = () => Navigation.setRoot({

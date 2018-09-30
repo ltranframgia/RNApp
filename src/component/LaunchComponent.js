@@ -2,8 +2,8 @@ import React, { Component } from 'react';
 import { StyleSheet, View, Text, Image, ActivityIndicator, Dimensions } from 'react-native';
 import { Navigation } from 'react-native-navigation';
 import { setRootToHomeScreen, setRootToLoginScreen } from '../navigation/root';
-import images from '../config/images'
-import colors from '../config/colors'
+import images from '../constants/images'
+import colors from '../constants/colors'
 
 export default class LaunchComponent extends Component {
 

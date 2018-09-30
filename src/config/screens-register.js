@@ -4,10 +4,10 @@ import { Navigation } from 'react-native-navigation';
 import ScreenName from './screens-name'
 
 // Container
-import LaunchContainer from './LaunchContainer'
-import LoginContainer from './LoginContainer'
-import DashboardContainer from './DashboardContainer'
-import ProfileContainer from './ProfileContainer'
+import LaunchContainer from '../containers/LaunchContainer'
+import LoginContainer from '../containers/LoginContainer'
+import DashboardContainer from '../containers/DashboardContainer'
+import ProfileContainer from '../containers/ProfileContainer'
 
 // register screens
 export function registerScreensWithStore(provider, store) {

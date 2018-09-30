@@ -1,5 +1,5 @@
 import { Navigation } from 'react-native-navigation';
-import ScreenName from '../containers/screens-name'
+import ScreenName from '../config/screens-name'
 
 // register screens
 export function pushProfile(componentId) {

@@ -2,8 +2,8 @@ import React, { Component } from 'react';
 import { Platform, SafeAreaView, StyleSheet, Text, View, TextInput, Image, TouchableOpacity, KeyboardAvoidingView } from 'react-native';
 import { ReachabilityView } from '../utils'
 import { setRootToHomeScreen } from '../navigation/root';
-import images from '../config/images'
-import colors from '../config/colors'
+import images from '../constants/images'
+import colors from '../constants/colors'
 
 export default class LoginComponent extends Component {
 

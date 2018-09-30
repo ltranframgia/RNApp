@@ -4,7 +4,7 @@ import { Platform, StyleSheet, SafeAreaView, Text, View, Button } from 'react-na
 import { ReachabilityView } from '../utils'
 
 import { pushProfile } from '../navigation/profile';
-import Colors from '../config/colors';
+import Colors from '../constants/colors';
 
 const loadingText = Platform.select({
   ios: 'dashboard',
