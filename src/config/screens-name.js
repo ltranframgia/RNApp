@@ -4,5 +4,6 @@ export default ScreenName = {
   launch: 'LaunchScreen',
   dashboard: 'DashboardScreen',
   profile: 'ProfileScreen',
-  login: 'LoginScreen'
+  login: 'LoginScreen',
+  loadingHUD: 'loadingHUDScreen'
 }
