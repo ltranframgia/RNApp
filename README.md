@@ -4,7 +4,7 @@ React Native 0.56.1
 
 Babel 7
 
-Redux
+Redux: https://github.com/reduxjs/react-redux
 
 Redux-thunk: https://github.com/reduxjs/redux-thunk
 
