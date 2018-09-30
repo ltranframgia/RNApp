@@ -5,6 +5,15 @@
    <BuildAction
       parallelizeBuildables = "NO"
       buildImplicitDependencies = "YES">
+      <PreActions>
+         <ExecutionAction
+            ActionType = "Xcode.IDEStandardExecutionActionsCore.ExecutionActionType.ShellScriptAction">
+            <ActionContent
+               title = "Run Script"
+               scriptText = "echo &quot;.env.production&quot; &gt; /tmp/envfile&#10;">
+            </ActionContent>
+         </ExecutionAction>
+      </PreActions>
       <BuildActionEntries>
          <BuildActionEntry
             buildForTesting = "YES"
@@ -14,9 +23,9 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "2D2A28121D9B038B00D4039D"
+               BlueprintIdentifier = "83CBBA2D1A601D0E00E9B192"
                BuildableName = "libReact.a"
-               BlueprintName = "React-tvOS"
+               BlueprintName = "React"
                ReferencedContainer = "container:../node_modules/react-native/React/React.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
@@ -28,23 +37,9 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "2D02E47A1E0B4A5D006451C7"
-               BuildableName = "RNApp-tvOS.app"
-               BlueprintName = "RNApp-tvOS"
-               ReferencedContainer = "container:RNApp.xcodeproj">
-            </BuildableReference>
-         </BuildActionEntry>
-         <BuildActionEntry
-            buildForTesting = "YES"
-            buildForRunning = "YES"
-            buildForProfiling = "NO"
-            buildForArchiving = "NO"
-            buildForAnalyzing = "YES">
-            <BuildableReference
-               BuildableIdentifier = "primary"
-               BlueprintIdentifier = "2D02E48F1E0B4A5D006451C7"
-               BuildableName = "RNApp-tvOSTests.xctest"
-               BlueprintName = "RNApp-tvOSTests"
+               BlueprintIdentifier = "13B07F861A680F5B00A75B9A"
+               BuildableName = "RNApp.app"
+               BlueprintName = "RNApp"
                ReferencedContainer = "container:RNApp.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
@@ -56,23 +51,13 @@
       selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.LLDB"
       shouldUseLaunchSchemeArgsEnv = "YES">
       <Testables>
-         <TestableReference
-            skipped = "NO">
-            <BuildableReference
-               BuildableIdentifier = "primary"
-               BlueprintIdentifier = "2D02E48F1E0B4A5D006451C7"
-               BuildableName = "RNApp-tvOSTests.xctest"
-               BlueprintName = "RNApp-tvOSTests"
-               ReferencedContainer = "container:RNApp.xcodeproj">
-            </BuildableReference>
-         </TestableReference>
       </Testables>
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "2D02E47A1E0B4A5D006451C7"
-            BuildableName = "RNApp-tvOS.app"
-            BlueprintName = "RNApp-tvOS"
+            BlueprintIdentifier = "13B07F861A680F5B00A75B9A"
+            BuildableName = "RNApp.app"
+            BlueprintName = "RNApp"
             ReferencedContainer = "container:RNApp.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
@@ -93,9 +78,9 @@
          runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "2D02E47A1E0B4A5D006451C7"
-            BuildableName = "RNApp-tvOS.app"
-            BlueprintName = "RNApp-tvOS"
+            BlueprintIdentifier = "13B07F861A680F5B00A75B9A"
+            BuildableName = "RNApp.app"
+            BlueprintName = "RNApp"
             ReferencedContainer = "container:RNApp.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
@@ -112,9 +97,9 @@
          runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "2D02E47A1E0B4A5D006451C7"
-            BuildableName = "RNApp-tvOS.app"
-            BlueprintName = "RNApp-tvOS"
+            BlueprintIdentifier = "13B07F861A680F5B00A75B9A"
+            BuildableName = "RNApp.app"
+            BlueprintName = "RNApp"
             ReferencedContainer = "container:RNApp.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>

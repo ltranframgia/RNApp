@@ -1,4 +1,6 @@
 import axios from 'axios';
+import Config from 'react-native-config'
+
 
 const HeaderKey = {
   ContentType: 'Content-Type',
@@ -6,7 +8,7 @@ const HeaderKey = {
   Accept: 'Accept'
 }
 
-const baseURL = 'https://thl.herokuapp.com/api/v1'
+const baseURL = Config.BASE_URL
 const axiosInstance = axios.create();
 axiosInstance.defaults.timeout = 30000;
 // configHeaderAuthorization('accessToken')
@@ -53,7 +55,7 @@ const isCancel = (error) => {
 }
 
 const request = async (config) => {
-  console.log('request ====================== ', config)
+  console.log('request ====================== ', config, Config.BASE_URL)
 
   // Authentication
   const Handler = require('./OauthHandler').default
