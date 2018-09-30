@@ -1,3 +1,5 @@
+import { Navigation } from 'react-native-navigation';
+
 // ScreenName
 import ScreenName from './screens-name'
 
@@ -28,7 +30,23 @@ let allScreens = {
 }
 
 function reset() {
-  allScreens = null
+  allScreens = {}
 }
 
-export default { allScreens, reset }
+
+// register screens
+export function registerScreensWithStore(provider, store) {
+
+  // registerComponentWithRedux
+  for (var key in allScreens) {
+    if (allScreens.hasOwnProperty(key)) {
+      const screen = allScreens[key]
+      Navigation.registerComponentWithRedux(screen.name, () => screen.container, provider, store)
+    }
+  }
+
+  // reset
+  reset()
+}
+
+export default { registerScreensWithStore }

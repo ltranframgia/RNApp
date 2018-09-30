@@ -1,7 +1,8 @@
 import { Navigation } from 'react-native-navigation';
 import store from './store/store';
 import { Provider } from 'react-redux';
-import { registerScreensWithStore, defautOptions } from './index-register';
+import { defautOptions } from './config/options';
+import { registerScreensWithStore } from './containers/screens-register';
 import { setRootToLaunchScreen } from './navigation/root';
 import { Reachability } from './utils'
 
