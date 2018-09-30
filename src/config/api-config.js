@@ -1,3 +1,12 @@
+// {
+//   url,
+//   method,
+//   data,
+//   params, 
+//   cancelToken: source.token,
+//   needAuthentication,
+//   needBaseUrl,
+// }
 
 // Router
 const app = {

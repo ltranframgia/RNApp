@@ -1,12 +1,12 @@
 import { Navigation } from 'react-native-navigation';
 import { Provider } from 'react-redux';
-import store from './store/store';
+import { getStore } from './store/store';
 import { defautOptions } from './config/options';
 import { registerScreensWithStore } from './config/screens-register';
 import { setRootToLaunchScreen } from './navigation/root';
 import { Reachability } from './utils'
 
-registerScreensWithStore(Provider, store);
+registerScreensWithStore(Provider, getStore());
 
 Navigation.events().registerAppLaunchedListener(() => {
 

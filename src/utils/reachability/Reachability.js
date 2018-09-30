@@ -24,8 +24,8 @@ handleConnectionChange = (connectionChange) => {
       payload: data
     })
 
-    const store = require('../../store/store').default
-    store.dispatch(action())
+    const { dispatchAction } = require('../../store/store')
+    dispatchAction(action())
   });
 
 };

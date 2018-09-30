@@ -9,4 +9,12 @@ const store = createStore(reducers, applyMiddleware(
   // loggerMiddleware 
 ));
 
-export default store;
+const dispatchAction = (action) => {
+  store.dispatch(action)
+}
+
+const getStore = () => {
+  return store
+}
+
+export { getStore, dispatchAction };
