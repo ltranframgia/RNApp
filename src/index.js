@@ -1,6 +1,6 @@
 import { Navigation } from 'react-native-navigation';
-import store from './store/store';
 import { Provider } from 'react-redux';
+import store from './store/store';
 import { defautOptions } from './config/options';
 import { registerScreensWithStore } from './containers/screens-register';
 import { setRootToLaunchScreen } from './navigation/root';
@@ -16,7 +16,7 @@ Navigation.events().registerAppLaunchedListener(() => {
   // listen
   Reachability.listen()
 
-  // option
+  // options
   Navigation.setDefaultOptions(defautOptions);
 
 });
