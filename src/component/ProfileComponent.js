@@ -2,7 +2,7 @@ import React, {Component} from 'react';
 import { Navigation } from 'react-native-navigation';
 import {Platform, StyleSheet, Text, View, Button} from 'react-native';
 
-import { goToLoginScreen } from '../navigation/root';
+import { setRootToLoginScreen } from '../navigation/root';
 import { pushProfile, showModalProfile } from '../navigation/profile';
 
 const loadingText = Platform.select({
@@ -23,7 +23,7 @@ export default class ProfileComponent extends Component {
   }
 
   touchOnSigoutButtonAction = () => {
-    goToLoginScreen()
+    setRootToLoginScreen()
   }
 
   touchOnProfileDetailButtonAction = () => {

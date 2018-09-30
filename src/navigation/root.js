@@ -1,7 +1,7 @@
 import { Navigation } from 'react-native-navigation';
 import ScreenName from '../containers/screens-name'
-import images from '../config/images';
-import colors from '../config/colors';
+import Images from '../config/images';
+import Colors from '../config/colors';
 
 // goto screen functions
 export const setRootToLaunchScreen = () => Navigation.setRoot({
@@ -21,13 +21,7 @@ export const setRootToLoginScreen = () => Navigation.setRoot({
             name: ScreenName.login,
           }
         }
-      ],
-      options: {
-        topBar: {
-          visible: false
-        }
-      }
-
+      ]
     }
   }
 })
@@ -40,19 +34,14 @@ export const setRootToHomeScreen = () => Navigation.setRoot({
           stack: {
             children: [{
               component: {
-                name: ScreenName.dashboard,
-                passProps: {
-                  text: ''
-                },
+                name: ScreenName.dashboard
               }
             }],
             options: {
               bottomTab: {
                 text: 'ダッシュボード',
-                fontSize: 12,
-                icon: images.tab_newsfeed,
-                selectedIcon: images.tab_newsfeed_active,
-                selectedTextColor: colors.blue
+                icon: Images.tab_newsfeed,
+                selectedIcon: Images.tab_newsfeed_active,
               },
 
             }
@@ -62,10 +51,7 @@ export const setRootToHomeScreen = () => Navigation.setRoot({
           stack: {
             children: [{
               component: {
-                name: ScreenName.dashboard,
-                passProps: {
-                  text: ''
-                },
+                name: ScreenName.dashboard
               }
             }],
             options: {
@@ -77,16 +63,13 @@ export const setRootToHomeScreen = () => Navigation.setRoot({
                 translucent: true,
                 transparent: true,
                 noBorder: false,
-                // blur: false,
               },
               bottomTab: {
                 text: 'カレンダー',
-                fontSize: 12,
-                icon: images.tab_schedule,
-                selectedIcon: images.tab_schedule_active,
-                selectedTextColor: colors.blue
+                icon: Images.tab_schedule,
+                selectedIcon: Images.tab_schedule_active,
               },
-              
+
             }
           }
         },
@@ -94,19 +77,14 @@ export const setRootToHomeScreen = () => Navigation.setRoot({
           stack: {
             children: [{
               component: {
-                name: ScreenName.profile,
-                passProps: {
-                  text: ''
-                },
+                name: ScreenName.profile
               }
             }],
             options: {
               bottomTab: {
                 text: '案件一覧',
-                fontSize: 12,
-                icon: images.tab_project,
-                selectedIcon: images.tab_project_active,
-                selectedTextColor: colors.blue
+                icon: Images.tab_project,
+                selectedIcon: Images.tab_project_active,
               }
             }
           }
@@ -115,19 +93,14 @@ export const setRootToHomeScreen = () => Navigation.setRoot({
           stack: {
             children: [{
               component: {
-                name: ScreenName.dashboard,
-                passProps: {
-                  text: ''
-                },
+                name: ScreenName.dashboard
               }
             }],
             options: {
               bottomTab: {
                 text: 'お知らせ',
-                fontSize: 12,
-                icon: images.tab_notification,
-                selectedIcon: images.tab_notification_active,
-                selectedTextColor: colors.blue
+                icon: Images.tab_notification,
+                selectedIcon: Images.tab_notification_active,
               }
             }
           }
@@ -136,19 +109,15 @@ export const setRootToHomeScreen = () => Navigation.setRoot({
           stack: {
             children: [{
               component: {
-                name: ScreenName.profile,
-                passProps: {
-                  text: ''
-                },
+                name: ScreenName.profile
               }
             }],
             options: {
               bottomTab: {
                 text: 'プロフィール',
-                fontSize: 12,
-                icon: images.tab_profile,
-                selectedIcon: images.tab_profile_active,
-                selectedTextColor: colors.blue
+                icon: Images.tab_profile,
+                selectedIcon: Images.tab_profile_active,
+                selectedTextColor: Colors.blue,
               }
             }
           }

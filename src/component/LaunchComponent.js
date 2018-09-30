@@ -1,11 +1,12 @@
 import React, { Component } from 'react';
-import { StyleSheet, View, Text, Image, ActivityIndicator } from 'react-native';
+import { StyleSheet, View, Text, Image, ActivityIndicator, Dimensions } from 'react-native';
 import { Navigation } from 'react-native-navigation';
 import { setRootToHomeScreen, setRootToLoginScreen } from '../navigation/root';
 import images from '../config/images'
 import colors from '../config/colors'
 
 export default class LaunchComponent extends Component {
+
 
   constructor(props) {
     super(props);
@@ -67,8 +68,10 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
   },
   image_bg: {
-    flex: 1,
     position: 'absolute',
+    alignSelf: 'center',
+    width: Dimensions.get('window').width,
+    height: Dimensions.get('window').height
   },
   logo_text: {
     position: 'absolute',

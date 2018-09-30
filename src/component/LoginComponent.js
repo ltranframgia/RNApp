@@ -1,11 +1,20 @@
 import React, { Component } from 'react';
-import { SafeAreaView, StyleSheet, Text, View, TextInput, Image, TouchableOpacity, KeyboardAvoidingView } from 'react-native';
+import { Platform, SafeAreaView, StyleSheet, Text, View, TextInput, Image, TouchableOpacity, KeyboardAvoidingView } from 'react-native';
 import { ReachabilityView } from '../utils'
 import { setRootToHomeScreen } from '../navigation/root';
 import images from '../config/images'
 import colors from '../config/colors'
 
 export default class LoginComponent extends Component {
+
+  static options(passProps) {
+    return {
+      topBar: {
+        drawBehind: true,
+        visible: false,
+      }
+    };
+  }
 
   touchOnSiginButtonAction = () => {
     setRootToHomeScreen()
@@ -18,7 +27,7 @@ export default class LoginComponent extends Component {
   render() {
     return (
       <SafeAreaView style={{ flex: 1 }}>
-        <KeyboardAvoidingView style={styles.container} behavior="padding">
+        <KeyboardAvoidingView style={styles.container} behavior={Platform.OS === 'ios' ? "padding" : null} >
           <ReachabilityView />
           <Image
             style={styles.logo_text}
