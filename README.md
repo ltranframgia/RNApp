@@ -12,4 +12,4 @@ React Native Navigation Wix (v2): https://github.com/wix/react-native-navigation
 
 Networking : https://github.com/axios/axios
 
-Congig: https://github.com/luggit/react-native-config
+Config (Environment): https://github.com/luggit/react-native-config
