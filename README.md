@@ -1,7 +1,5 @@
 # React Native App example
 
-Using :
-
 React Native 0.56.1
 
 Babel 7
