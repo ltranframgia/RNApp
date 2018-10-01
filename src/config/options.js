@@ -1,4 +1,4 @@
-import Images from '../constants/images'
+import Images from '../assets/images'
 import Colors from '../constants/colors'
 
 export const defautOptions = {

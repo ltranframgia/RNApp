@@ -27,7 +27,18 @@ export default class ProfileComponent extends Component {
   }
 
   touchOnProfileDetailButtonAction = () => {
-    pushProfile(this.props.componentId)
+    // pushProfile(this.props.componentId)
+    Navigation.showOverlay({
+      component: {
+        name: 'loadingHUDScreen',
+        options: {
+          overlay: {
+            interceptTouchOutside: false
+          }
+        }
+      }
+    });
+    
   }
 
   touchOnProfileEditButtonAction = () => {

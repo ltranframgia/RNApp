@@ -1,9 +1,10 @@
 import React, { Component } from 'react';
 import { Platform, SafeAreaView, StyleSheet, Text, View, TextInput, Image, TouchableOpacity, KeyboardAvoidingView } from 'react-native';
+import { Navigation } from 'react-native-navigation';
 import { ReachabilityView } from '../utils'
 import { setRootToHomeScreen } from '../navigation/root';
-import images from '../constants/images'
-import colors from '../constants/colors'
+import Images from '../assets/images'
+import Colors from '../constants/colors'
 
 export default class LoginComponent extends Component {
 
@@ -18,6 +19,16 @@ export default class LoginComponent extends Component {
 
   touchOnSiginButtonAction = () => {
     setRootToHomeScreen()
+    // Navigation.showOverlay({
+    //   component: {
+    //     name: 'loadingHUDScreen',
+    //     options: {
+    //       overlay: {
+    //         interceptTouchOutside: false
+    //       }
+    //     }
+    //   }
+    // });
   }
 
   touchOnRegisterButtonAction = () => {
@@ -32,7 +43,7 @@ export default class LoginComponent extends Component {
           <Image
             style={styles.logo_text}
             resizeMode='center'
-            source={images.logo_text_blue}
+            source={Images.logo_text_blue}
           />
 
           <View style={{
@@ -93,7 +104,7 @@ const styles = StyleSheet.create({
     marginTop: 20,
     marginHorizontal: 40,
     height: 40,
-    backgroundColor: colors.blue,
+    backgroundColor: Colors.blue,
     justifyContent: 'center',
   },
   login_text: {

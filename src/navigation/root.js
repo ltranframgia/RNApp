@@ -1,6 +1,6 @@
 import { Navigation } from 'react-native-navigation';
 import ScreenName from '../config/screens-name'
-import Images from '../constants/images';
+import Images from '../assets/images';
 import Colors from '../constants/colors';
 
 // goto screen functions

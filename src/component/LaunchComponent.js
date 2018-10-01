@@ -2,8 +2,8 @@ import React, { Component } from 'react';
 import { StyleSheet, View, Text, Image, ActivityIndicator, Dimensions } from 'react-native';
 import { Navigation } from 'react-native-navigation';
 import { setRootToHomeScreen, setRootToLoginScreen } from '../navigation/root';
-import images from '../constants/images'
-import colors from '../constants/colors'
+import Images from '../assets/images'
+// import Colors from '../constants/colors'
 
 export default class LaunchComponent extends Component {
 
@@ -47,13 +47,13 @@ export default class LaunchComponent extends Component {
       <View style={[styles.container]}>
         <Image
           style={styles.image_bg}
-          source={images.splash_bg}
+          source={Images.splash_bg}
           resizeMode='stretch'
         />
         <Image
           style={styles.logo_text}
           resizeMode='center'
-          source={images.logo_text}
+          source={Images.logo_text}
         />
         <ActivityIndicator style={styles.activityIndicator} size="small" />
       </View>
