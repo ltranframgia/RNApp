@@ -10,6 +10,10 @@ export default class LoginComponent extends Component {
 
   static options(passProps) {
     return {
+      statusBar: {
+        backgroundColor: 'white',
+        style: 'dark'
+      },
       topBar: {
         drawBehind: true,
         visible: false,

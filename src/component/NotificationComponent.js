@@ -14,6 +14,10 @@ export default class NotificationComponent extends Component {
 
   static options(passProps) {
     return {
+      statusBar: {
+        backgroundColor: 'white',
+        style: 'dark'
+      },
       topBar: {
         title: {
           component: {

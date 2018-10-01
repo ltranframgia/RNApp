@@ -15,7 +15,7 @@ export default class DashboardComponent extends Component {
   static options(passProps) {
     return {
       statusBar: {
-        visible: true,
+        backgroundColor: '#1370D2',
         style: 'light'
       },
       topBar: {

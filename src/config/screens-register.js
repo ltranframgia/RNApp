@@ -12,7 +12,7 @@ import CalendarContainer from '../containers/CalendarContainer'
 import NotificationContainer from '../containers/NotificationContainer'
 import RegisterContainer from '../containers/RegisterContainer'
 
-import TopBarTitleView from '../component/TopBarTitleView'
+import TopBarTitleView from '../component/views/TopBarTitleView'
 import { LoadingView } from '../utils'
 
 // register screens

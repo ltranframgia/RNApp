@@ -6,7 +6,19 @@ import Images from '../assets/images'
 // import Colors from '../constants/colors'
 
 export default class LaunchComponent extends Component {
-
+  static options(passProps) {
+    return {
+      statusBar: {
+        backgroundColor: '#1370D2',
+        visible: true,
+        style: 'light'
+      },
+      topBar: {
+        drawBehind: true,
+        visible: false,
+      }
+    };
+  }
 
   constructor(props) {
     super(props);
