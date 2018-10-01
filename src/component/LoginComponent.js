@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import { Platform, SafeAreaView, StyleSheet, Text, View, TextInput, Image, TouchableOpacity, KeyboardAvoidingView } from 'react-native';
-import { Navigation } from 'react-native-navigation';
 import { ReachabilityView } from '../utils'
 import { setRootToHomeScreen } from '../navigation/root';
 import Images from '../assets/images'
@@ -19,16 +18,6 @@ export default class LoginComponent extends Component {
 
   touchOnSiginButtonAction = () => {
     setRootToHomeScreen()
-    // Navigation.showOverlay({
-    //   component: {
-    //     name: 'loadingHUDScreen',
-    //     options: {
-    //       overlay: {
-    //         interceptTouchOutside: false
-    //       }
-    //     }
-    //   }
-    // });
   }
 
   touchOnRegisterButtonAction = () => {
@@ -73,8 +62,6 @@ export default class LoginComponent extends Component {
               <Text style={styles.login_text}>Login</Text>
             </TouchableOpacity>
           </View>
-
-
         </KeyboardAvoidingView>
       </SafeAreaView>
     );

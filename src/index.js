@@ -22,7 +22,7 @@ Navigation.events().registerAppLaunchedListener(() => {
 });
 
 Navigation.events().registerComponentDidAppearListener(({ componentId, componentName }) => {
-  // console.log('registerComponentDidAppearListener: ' + componentId + " " + componentName)
+  console.log('registerComponentDidAppearListener: ' + componentId + " " + componentName)
   // console.log(store.getState())
 });
 

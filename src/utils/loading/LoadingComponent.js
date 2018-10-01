@@ -1,27 +1,23 @@
 import React, { Component } from 'react';
-import { Platform, StyleSheet, Text, View, SafeAreaView, Image, Dimensions, ActivityIndicator } from 'react-native';
-// import images from '../constants/images'
-// import colors from '../constants/colors'
+import PropTypes from 'prop-types';
+import { StyleSheet, Text, View, Image, Dimensions, ActivityIndicator } from 'react-native';
 
 export default class LoadingComponent extends Component {
+  static propTypes = {
+    show: PropTypes.bool
+  }   
 
-  // static options(passProps) {
-  //   return {
-  //     topBar: {
-  //       drawBehind: true,
-  //       visible: false,
-  //     }
-  //   };
-  // }
-
-  touchOnSiginButtonAction = () => {
-    setRootToHomeScreen()
+  constructor(props) {
+    super(props);
   }
 
   render() {
+    if (this.props.show === false) {
+      return null
+    }
     return (
       <View style={styles.container} >
-        <View style={styles.overlayBg} opacity={0.35} />
+        <View style={styles.overlayBg} opacity={0.5} />
         <View style={styles.viewIndicator}>
           <ActivityIndicator style={styles.activityIndicator} size="large" />
         </View>
@@ -32,19 +28,22 @@ export default class LoadingComponent extends Component {
 
 const styles = StyleSheet.create({
   container: {
-    flex: 1,
+    position: 'absolute',
     justifyContent: 'center',
-    // marginBottom: 100
+    left: 0,
+    right: 0,
+    top: 0,
+    bottom: 0,
   },
   overlayBg: {
     position: 'absolute',
-    alignSelf: 'center',
-    width: Dimensions.get('window').width,
-    height: Dimensions.get('window').height,
+    left: 0,
+    right: 0,
+    top: 0,
+    bottom: 0,
     backgroundColor: 'gray',
   },
   viewIndicator: {
-    // paddingVertical: 20,
     alignSelf: 'center',
     backgroundColor: 'white',
     height: 100,

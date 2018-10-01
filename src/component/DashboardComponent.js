@@ -1,8 +1,7 @@
 import React, { Component } from 'react';
 import { Navigation } from 'react-native-navigation';
 import { Platform, StyleSheet, SafeAreaView, Text, View, Button } from 'react-native';
-import { ReachabilityView } from '../utils'
-
+import { ReachabilityView, LoadingView } from '../utils'
 import { pushProfile } from '../navigation/profile';
 import Colors from '../constants/colors';
 
@@ -30,12 +29,13 @@ export default class DashboardComponent extends Component {
   render() {
     return (
       <SafeAreaView style={styles.container}>
-        <ReachabilityView/>
+        <ReachabilityView />
         <Text style={styles.instructions}>{loadingText}</Text>
         <Button
           title='Detail'
           onPress={this.touchOnProfileDetailButtonAction}
         />
+        <LoadingView show={false}/>
       </SafeAreaView>
     );
   }

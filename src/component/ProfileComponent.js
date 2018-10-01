@@ -4,7 +4,7 @@ import {Platform, StyleSheet, Text, View, Button} from 'react-native';
 
 import { setRootToLoginScreen } from '../navigation/root';
 import { pushProfile, showModalProfile } from '../navigation/profile';
-
+import {Loading } from '../utils'
 const loadingText = Platform.select({
   ios: 'Profile',
   android: 'Profile',
@@ -28,17 +28,7 @@ export default class ProfileComponent extends Component {
 
   touchOnProfileDetailButtonAction = () => {
     // pushProfile(this.props.componentId)
-    Navigation.showOverlay({
-      component: {
-        name: 'loadingHUDScreen',
-        options: {
-          overlay: {
-            interceptTouchOutside: false
-          }
-        }
-      }
-    });
-    
+    Loading.showHud()
   }
 
   touchOnProfileEditButtonAction = () => {
@@ -46,8 +36,6 @@ export default class ProfileComponent extends Component {
   }
 
   touchOnDismissButtonAction = () => {
-    // console.log('touchOnDismissButtonAction')
-    // console.log(this.props.componentId)
     Navigation.dismissModal(this.props.componentId);
   }
 
