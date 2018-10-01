@@ -1,16 +1,32 @@
-import React, {Component} from 'react';
+import React, { Component } from 'react';
 import { Navigation } from 'react-native-navigation';
-import {Platform, StyleSheet, Text, View, Button} from 'react-native';
-
+import { Platform, StyleSheet, Text, View, Button } from 'react-native';
 import { setRootToLoginScreen } from '../navigation/root';
 import { pushProfile, showModalProfile } from '../navigation/profile';
-import {Loading } from '../utils'
+import { Loading } from '../utils'
+
 const loadingText = Platform.select({
   ios: 'Profile',
   android: 'Profile',
 });
 
 export default class NotificationComponent extends Component {
+
+  static options(passProps) {
+    return {
+      topBar: {
+        title: {
+          component: {
+            name: ScreenName.topBarTitle,
+            alignment: 'center',
+            passProps: {
+              text: 'Nofitication'
+            }
+          }
+        }
+      }
+    }
+  }
 
   constructor(props) {
     super(props);
@@ -32,7 +48,7 @@ export default class NotificationComponent extends Component {
   }
 
   touchOnProfileEditButtonAction = () => {
-    showModalProfile()    
+    showModalProfile()
   }
 
   touchOnDismissButtonAction = () => {
@@ -47,7 +63,7 @@ export default class NotificationComponent extends Component {
           title='Signout'
           onPress={this.touchOnSigoutButtonAction}
         />
-         <Button
+        <Button
           title='Detail'
           onPress={this.touchOnProfileDetailButtonAction}
         />

@@ -7,7 +7,13 @@ import Colors from '../constants/colors';
 export const setRootToLaunchScreen = () => Navigation.setRoot({
   root: {
     component: {
-      name: ScreenName.launch
+      name: ScreenName.launch,
+      options: {
+        statusBar: {
+          visible: true,
+          style: 'light'
+        }
+      }
     }
   },
 })
@@ -43,7 +49,6 @@ export const setRootToHomeScreen = () => Navigation.setRoot({
                 icon: Images.tab_newsfeed,
                 selectedIcon: Images.tab_newsfeed_active,
               },
-
             }
           }
         },
@@ -58,11 +63,6 @@ export const setRootToHomeScreen = () => Navigation.setRoot({
               statusBar: {
                 visible: true,
                 style: 'light'
-              },
-              topBar: {
-                translucent: true,
-                transparent: true,
-                noBorder: false,
               },
               bottomTab: {
                 text: 'カレンダー',

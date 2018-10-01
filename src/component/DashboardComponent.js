@@ -14,16 +14,13 @@ export default class DashboardComponent extends Component {
 
   static options(passProps) {
     return {
+      statusBar: {
+        visible: true,
+        style: 'light'
+      },
       topBar: {
-        title: {
-          component: {
-            name: 'TopBarTitle',
-            alignment: 'center',
-            passProps: {
-              text: "Dashboard"
-            }
-          }
-        },
+        drawBehind: true,
+        visible: false,
       }
     };
   }

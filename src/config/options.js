@@ -26,7 +26,7 @@ export const defautOptions = {
     fontSize: 10
   },
   animations: {
-    push: { 
+    push: {
       enable: true,
       content: {
         x: {
