@@ -8,6 +8,7 @@ import LaunchContainer from '../containers/LaunchContainer'
 import LoginContainer from '../containers/LoginContainer'
 import DashboardContainer from '../containers/DashboardContainer'
 import ProfileContainer from '../containers/ProfileContainer'
+import TopBarTitleView from '../component/TopBarTitleView'
 import { LoadingView } from '../utils'
 
 // register screens
@@ -15,6 +16,7 @@ export function registerScreensWithStore(provider, store) {
 
   // register Component
   Navigation.registerComponent(ScreenName.loadingHud, () => LoadingView)
+  Navigation.registerComponent(ScreenName.topBarTitle, () => TopBarTitleView)
 
   // register with Redux
   Navigation.registerComponentWithRedux(ScreenName.launch, () => LaunchContainer, provider, store)

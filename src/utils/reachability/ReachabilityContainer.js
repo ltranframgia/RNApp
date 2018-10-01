@@ -1,5 +1,5 @@
 import { connect } from 'react-redux';
-import ReachabilityCompenent from './ReachabilityCompenent'
+import ReachabilityView from './ReachabilityView'
 
 const mapStateToProps = state => {
   const { netInfo } = state
@@ -8,6 +8,6 @@ const mapStateToProps = state => {
   };
 };
 
-const ReachabilityContainer = connect(mapStateToProps, {})(ReachabilityCompenent);
+const ReachabilityContainer = connect(mapStateToProps, {})(ReachabilityView);
 
 export default ReachabilityContainer;

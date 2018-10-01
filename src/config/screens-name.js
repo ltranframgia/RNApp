@@ -5,5 +5,6 @@ export default ScreenName = {
   dashboard: 'DashboardScreen',
   profile: 'ProfileScreen',
   login: 'LoginScreen',
-  loadingHud: 'loadingHUDScreen'
+  loadingHud: 'loadingHUDScreen',
+  topBarTitle: 'TopBarTitle',
 }

@@ -2,11 +2,11 @@ import React, { Component } from 'react';
 import { Platform, StyleSheet, Text, View } from 'react-native';
 
 const loadingText = Platform.select({
-  ios: 'ReachabilityComponent',
-  android: 'ReachabilityComponent',
+  ios: 'No Internet Connection !',
+  android: 'No Internet Connection !',
 });
 
-export default class ReachabilityCompenent extends Component {
+export default class ReachabilityView extends Component {
 
   render() {
     if (this.props.netInfo.isConnected == true) {

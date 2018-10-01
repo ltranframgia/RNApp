@@ -1,13 +1,22 @@
 import Images from '../assets/images'
 import Colors from '../constants/colors'
+import ScreenName from '../config/screens-name'
 
 export const defautOptions = {
   topBar: {
+    elevation: 0,
+    animate: false,
     backButton: {
       icon: Images.back,
       visible: true,
       color: '#1D1E2C'
     },
+    title: {
+      component: {
+        name: ScreenName.topBarTitle,
+        alignment: 'center'
+      }
+    }
   },
   bottomTabs: {
     titleDisplayMode: 'alwaysShow',
@@ -15,11 +24,6 @@ export const defautOptions = {
   bottomTab: {
     selectedTextColor: Colors.blue,
     fontSize: 10
-  },
-  _animations: {
-    push: {
-      waitForRender: false,
-    }
   },
   animations: {
     push: { 

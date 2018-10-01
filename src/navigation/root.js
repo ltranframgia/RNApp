@@ -101,6 +101,7 @@ export const setRootToHomeScreen = () => Navigation.setRoot({
                 text: 'お知らせ',
                 icon: Images.tab_notification,
                 selectedIcon: Images.tab_notification_active,
+                badge: '3'
               }
             }
           }

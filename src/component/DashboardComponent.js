@@ -12,6 +12,22 @@ const loadingText = Platform.select({
 
 export default class DashboardComponent extends Component {
 
+  static options(passProps) {
+    return {
+      topBar: {
+        title: {
+          component: {
+            name: 'TopBarTitle',
+            alignment: 'center',
+            passProps: {
+              text: "Dashboard"
+            }
+          }
+        },
+      }
+    };
+  }
+
   constructor(props) {
     super(props);
     Navigation.events().bindComponent(this);
@@ -35,7 +51,7 @@ export default class DashboardComponent extends Component {
           title='Detail'
           onPress={this.touchOnProfileDetailButtonAction}
         />
-        <LoadingView show={false}/>
+        <LoadingView show={false} />
       </SafeAreaView>
     );
   }

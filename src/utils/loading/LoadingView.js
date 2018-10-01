@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { StyleSheet, Text, View, Image, Dimensions, ActivityIndicator } from 'react-native';
 
-export default class LoadingComponent extends Component {
+export default class LoadingView extends Component {
   static propTypes = {
     show: PropTypes.bool
   }   
