@@ -1,9 +1,10 @@
 import React, { Component } from 'react';
-import { Platform, SafeAreaView, StyleSheet, Text, View, TextInput, Image, TouchableOpacity, KeyboardAvoidingView } from 'react-native';
+import { Platform, SafeAreaView, StyleSheet, Text, View, TextInput, Image, TouchableOpacity, KeyboardAvoidingView, TouchableWithoutFeedback } from 'react-native';
 import { ReachabilityView } from '../utils'
 import { setRootToHomeScreen } from '../navigation/root';
 import Images from '../assets/images'
 import Colors from '../constants/colors'
+import DismissKeyboard from 'dismissKeyboard';
 
 export default class LoginComponent extends Component {
 
@@ -17,6 +18,7 @@ export default class LoginComponent extends Component {
   }
 
   touchOnSiginButtonAction = () => {
+    DismissKeyboard()
     setRootToHomeScreen()
   }
 
@@ -27,42 +29,45 @@ export default class LoginComponent extends Component {
   render() {
     return (
       <SafeAreaView style={{ flex: 1 }}>
-        <KeyboardAvoidingView style={styles.container} behavior={Platform.OS === 'ios' ? "padding" : null} >
-          <ReachabilityView />
-          <Image
-            style={styles.logo_text}
-            resizeMode='center'
-            source={Images.logo_text_blue}
-          />
+        <TouchableOpacity style={styles.button_bg} activeOpacity={1} onPress={() => { DismissKeyboard() }} >
+          <KeyboardAvoidingView style={styles.container} behavior={Platform.OS === 'ios' ? "padding" : null} >
 
-          <View style={{
-            paddingVertical: 20,
-            alignSelf: 'stretch',
-            // marginBottom : 50
-          }}>
-            <Text style={{
-              marginTop: 15,
-              marginHorizontal: 40,
-            }}>ID</Text>
-            <TextInput style={styles.textinput}
-              placeholder="Username"
-            />
-            <Text style={{
-              marginTop: 15,
-              marginHorizontal: 40,
-            }}>Password</Text>
-            <TextInput style={styles.textinput}
-              placeholder="Password"
-              secureTextEntry
+            <ReachabilityView />
+            <Image
+              style={styles.logo_text}
+              resizeMode='center'
+              source={Images.logo_text_blue}
             />
 
-            <TouchableOpacity
-              style={styles.login_button}
-              onPress={this.touchOnSiginButtonAction}>
-              <Text style={styles.login_text}>Login</Text>
-            </TouchableOpacity>
-          </View>
-        </KeyboardAvoidingView>
+            <View style={{
+              paddingVertical: 20,
+              alignSelf: 'stretch',
+              // marginBottom : 50
+            }}>
+              <Text style={{
+                marginTop: 15,
+                marginHorizontal: 40,
+              }}>ID</Text>
+              <TextInput style={styles.textinput}
+                placeholder="Username"
+              />
+              <Text style={{
+                marginTop: 15,
+                marginHorizontal: 40,
+              }}>Password</Text>
+              <TextInput style={styles.textinput}
+                placeholder="Password"
+                secureTextEntry
+              />
+
+              <TouchableOpacity
+                style={styles.login_button}
+                onPress={this.touchOnSiginButtonAction}>
+                <Text style={styles.login_text}>Login</Text>
+              </TouchableOpacity>
+            </View>
+          </KeyboardAvoidingView>
+        </TouchableOpacity>
       </SafeAreaView>
     );
   }
@@ -97,6 +102,14 @@ const styles = StyleSheet.create({
   login_text: {
     color: 'white',
     alignSelf: 'center'
+  },
+  button_bg: {
+    position: 'absolute',
+    justifyContent: 'center',
+    left: 0,
+    right: 0,
+    top: 0,
+    bottom: 0,
   },
 
 });
