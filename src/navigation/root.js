@@ -51,7 +51,7 @@ export const setRootToHomeScreen = () => Navigation.setRoot({
           stack: {
             children: [{
               component: {
-                name: ScreenName.dashboard
+                name: ScreenName.calendar
               }
             }],
             options: {
@@ -77,7 +77,7 @@ export const setRootToHomeScreen = () => Navigation.setRoot({
           stack: {
             children: [{
               component: {
-                name: ScreenName.profile
+                name: ScreenName.register
               }
             }],
             options: {
@@ -93,7 +93,7 @@ export const setRootToHomeScreen = () => Navigation.setRoot({
           stack: {
             children: [{
               component: {
-                name: ScreenName.dashboard
+                name: ScreenName.notification
               }
             }],
             options: {

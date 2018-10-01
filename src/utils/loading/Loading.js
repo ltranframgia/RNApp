@@ -11,7 +11,7 @@ const showHud = () => {
   Navigation.showOverlay({
     component: {
       id: 'loadingHUDScreenId',
-      name: 'loadingHUDScreen',
+      name: 'LoadingHUDScreen',
       options: {
         overlay: {
           interceptTouchOutside: false
