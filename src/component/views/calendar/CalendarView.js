@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { Platform, StyleSheet, Text, View, FlatList, Dimensions, Button } from 'react-native';
+import fonts from '../../../constants/fonts'
 
 import MonthView from './MonthView'
 
@@ -204,7 +205,7 @@ export default class CalendarView extends Component {
 
     return (<View key={item.id} style={{ flex: 1, height: item.height, backgroundColor: 'white', justifyContent: 'center' }}>
       <View style={{ height: 30, justifyContent: 'center' }}>
-        <Text style={{ marginLeft: marginLeft, width: widthLabel, fontSize: 20, textAlign: 'center', fontWeight: 'bold', color: 'black' }}>{MonthNames[month]}月</Text>
+        <Text style={{ marginLeft: marginLeft, width: widthLabel, fontSize: 20, textAlign: 'center', color: 'black' , fontFamily: fonts.hiraKakuProW6}}>{MonthNames[month]}月</Text>
       </View>
       <MonthView key={item.id} monthData={item} />
     </View>)

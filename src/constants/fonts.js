@@ -1,6 +1,8 @@
 
 const fonts = {
-  monaco: 'monaco',
+  hiraKakuProW6: 'HiraKakuProN-W6',
+  hiraKakuProW3: 'HiraKakuProN-W3',
+  
 };
 
 export default fonts;

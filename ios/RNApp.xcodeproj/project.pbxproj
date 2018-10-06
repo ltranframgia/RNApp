@@ -5,7 +5,6 @@
 	};
 	objectVersion = 46;
 	objects = {
-
 /* Begin PBXBuildFile section */
 		00C302E51ABCBA2D00DB3ED1 /* libRCTActionSheet.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 00C302AC1ABCB8CE00DB3ED1 /* libRCTActionSheet.a */; };
 		00C302E71ABCBA2D00DB3ED1 /* libRCTGeolocation.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 00C302BA1ABCB90400DB3ED1 /* libRCTGeolocation.a */; };
@@ -27,6 +26,8 @@
 		82EF8AE521659B6D007371F1 /* libART.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 82EF8ABA21659B66007371F1 /* libART.a */; };
 		832341BD1AAA6AB300B99B32 /* libRCTText.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 832341B51AAA6A8300B99B32 /* libRCTText.a */; };
 		ADBDB9381DFEBF1600ED6528 /* libRCTBlob.a in Frameworks */ = {isa = PBXBuildFile; fileRef = ADBDB9271DFEBF0700ED6528 /* libRCTBlob.a */; };
+		14C598A905A64B1D875E54E8 /* HiraginoKakuProW3.otf in Resources */ = {isa = PBXBuildFile; fileRef = 296E7E45D2AE4513A6B2FC41 /* HiraginoKakuProW3.otf */; };
+		7D5942EED625454AA7622D0D /* HiraginoKakuProW6.otf in Resources */ = {isa = PBXBuildFile; fileRef = B23F9621F465433D91530897 /* HiraginoKakuProW6.otf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -354,6 +355,8 @@
 		B4E93CDCB0AC9CAF024DB598 /* Pods-RNApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RNApp.debug.xcconfig"; path = "Pods/Target Support Files/Pods-RNApp/Pods-RNApp.debug.xcconfig"; sourceTree = "<group>"; };
 		C60D49B7BC23FD377A904511 /* Pods-RNApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RNApp.release.xcconfig"; path = "Pods/Target Support Files/Pods-RNApp/Pods-RNApp.release.xcconfig"; sourceTree = "<group>"; };
 		E2F2E11B8A93E06FDE8C5435 /* Pods_RNApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RNApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		296E7E45D2AE4513A6B2FC41 /* HiraginoKakuProW3.otf */ = {isa = PBXFileReference; name = "HiraginoKakuProW3.otf"; path = "../src/assets/fonts/HiraginoKakuProW3.otf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		B23F9621F465433D91530897 /* HiraginoKakuProW6.otf */ = {isa = PBXFileReference; name = "HiraginoKakuProW6.otf"; path = "../src/assets/fonts/HiraginoKakuProW6.otf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -574,6 +577,7 @@
 				83CBBA001A601CBA00E9B192 /* Products */,
 				2D16E6871FA4F8E400B85C8A /* Frameworks */,
 				8A2FC2F39356CA477F48A12D /* Pods */,
+				95B167BCF2624FEDA1692F43 /* Resources */,
 			);
 			indentWidth = 2;
 			sourceTree = "<group>";
@@ -606,6 +610,16 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
+		95B167BCF2624FEDA1692F43 /* Resources */ = {
+			isa = "PBXGroup";
+			children = (
+				296E7E45D2AE4513A6B2FC41 /* HiraginoKakuProW3.otf */,
+				B23F9621F465433D91530897 /* HiraginoKakuProW6.otf */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+			path = "";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -634,7 +648,7 @@
 		83CBB9F71A601CBA00E9B192 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0940;
+				LastUpgradeCheck = 940;
 				ORGANIZATIONNAME = Facebook;
 				TargetAttributes = {
 					13B07F861A680F5B00A75B9A = {
@@ -1026,6 +1040,8 @@
 			files = (
 				13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */,
 				13B07FBD1A68108700A75B9A /* LaunchScreen.xib in Resources */,
+				14C598A905A64B1D875E54E8 /* HiraginoKakuProW3.otf in Resources */,
+				7D5942EED625454AA7622D0D /* HiraginoKakuProW6.otf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -2,7 +2,7 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { Platform, StyleSheet, Text, View, FlatList } from 'react-native';
-
+import fonts from '../../../constants/fonts'
 
 export default class DayView extends React.PureComponent {
 
@@ -46,7 +46,7 @@ export default class DayView extends React.PureComponent {
     }
     return (
       <View style={{ height: 100, flex: 1, justifyContent: 'flex-start' }}>
-        <Text style={{ alignSelf: 'center', height: 18, marginVertical: 1, opacity: opacity  }}>{text}</Text>
+        <Text style={{ alignSelf: 'center', height: 18, marginVertical: 1, opacity: opacity, fontFamily:fonts.hiraKakuProW6, fontSize: 12  }}>{text}</Text>
         {/* {this.renderPlan('', null)}
         {this.renderPlan('', null)}
         {this.renderPlan('', null)}

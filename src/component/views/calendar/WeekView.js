@@ -2,6 +2,7 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { Platform, StyleSheet, Text, View, FlatList } from 'react-native';
+import fonts from '../../../constants/fonts'
 import DayView from './DayView'
 
 // let dayNames = [0, 1, 2, 3, 4, 5, 6];
