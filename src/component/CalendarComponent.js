@@ -1,9 +1,10 @@
 import React, { Component } from 'react';
 import { Navigation } from 'react-native-navigation';
-import { Platform, StyleSheet, Text, View, Button } from 'react-native';
+import { Platform, StyleSheet, Text, View, Button, FlatList } from 'react-native';
 import { setRootToLoginScreen } from '../navigation/root';
 import { pushProfile, showModalProfile } from '../navigation/profile';
 import { Loading } from '../utils'
+import CalendarView from './views/calendar/CalendarView'
 
 const loadingText = Platform.select({
   ios: 'Profile',
@@ -24,7 +25,8 @@ export default class CalendarComponent extends Component {
             name: ScreenName.topBarTitle,
             alignment: 'center',
             passProps: {
-              text: 'Calendar'
+              text: 'Calendar',
+              subText: '2018',
             }
           }
         }
@@ -62,25 +64,7 @@ export default class CalendarComponent extends Component {
   render() {
     return (
       <View style={styles.container}>
-        <Text style={styles.instructions}>{loadingText}</Text>
-        <Button
-          title='Signout'
-          onPress={this.touchOnSigoutButtonAction}
-        />
-        <Button
-          title='Detail'
-          onPress={this.touchOnProfileDetailButtonAction}
-        />
-        <Button
-          title='Edit'
-          onPress={this.touchOnProfileEditButtonAction}
-        />
-
-        <Button
-          title='Dismiss'
-          onPress={this.touchOnDismissButtonAction}
-        />
-
+        <CalendarView />
       </View>
     );
   }
@@ -90,7 +74,7 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     justifyContent: 'center',
-    alignItems: 'center',
+    // alignItems: 'center',
     backgroundColor: '#F5FCFF',
   },
   welcome: {

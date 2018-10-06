@@ -46,6 +46,40 @@ const paths = [
   },
 ]
 
+
+const paths2 = [
+  {
+    radius: 0,
+    borderWidth: 60,
+    startValue: 0,
+    value: 100,
+    color: 'white'
+  },
+  {
+    radius: 60,
+    startValue: 0,
+    value: 80,
+    color: 'red'
+  },
+  {
+    radius: 70,
+    startValue: 0,
+    value: 20,
+    color: 'yellow'
+  },
+  {
+    radius: 70,
+    startValue: 20,
+    value: 40,
+    color: 'green'
+  },
+  {
+    radius: 80,
+    startValue: 0,
+    value: 100,
+    color: 'white'
+  },
+]
 export default class DashboardComponent extends Component {
 
   static options(passProps) {
@@ -67,6 +101,11 @@ export default class DashboardComponent extends Component {
   constructor(props) {
     super(props);
     Navigation.events().bindComponent(this);
+    this.state = {
+      // animatedValue: new Animated.Value(0),
+      animated: true,
+      paths: paths
+    };
   }
 
   componentDidAppear() {
@@ -76,6 +115,11 @@ export default class DashboardComponent extends Component {
 
   touchOnProfileDetailButtonAction = () => {
     // pushProfile(this.props.componentId)
+    this.setState({
+      animated: true,
+      paths: paths2
+
+    })
   }
 
   render() {
@@ -91,7 +135,7 @@ export default class DashboardComponent extends Component {
           renderItem={({ item, index, section }) => {
             if (index === 0 &&
               section.title === 'Title3') {
-              return (<CircleChart width={200} height={200} paths={paths} total={100} animated={true} /> )
+              return (<CircleChart width={200} height={200} paths={this.state.paths} total={100} animated={this.state.animated} /> )
             }
             return (<Text style={{ height: 50, backgroundColor: Colors.white }} key={index}>{item}</Text>)
           }}
@@ -107,7 +151,7 @@ export default class DashboardComponent extends Component {
           sections={[
             { title: 'Title1', data: ['item1', 'item2'] },
             { title: 'Title2', data: ['item3', 'item4'] },
-            { title: 'Title3', data: ['item5', 'item6', 'item6', 'item6', 'item6', 'item6', 'item6', 'item6', 'item6', 'item6', 'item6', 'item6', 'item6', 'item6', 'item6', 'item6', 'item6',] },
+            { title: 'Title3', data: ['item5', 'item6'] },
           ]}
           keyExtractor={(item, index) => item + index}
         />
