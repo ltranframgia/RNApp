@@ -1,6 +1,7 @@
 import Images from '../assets/images'
 import Colors from '../constants/colors'
 import ScreenName from '../config/screens-name'
+import fonts from '../constants/fonts'
 
 export const defautOptions = {
   topBar: {
@@ -23,7 +24,8 @@ export const defautOptions = {
   },
   bottomTab: {
     selectedTextColor: Colors.blue,
-    fontSize: 10
+    fontSize: 10,
+    fontFamily:fonts.hiraKakuProW3
   },
   animations: {
     push: {

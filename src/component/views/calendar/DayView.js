@@ -40,13 +40,15 @@ export default class DayView extends React.PureComponent {
 
   render() {
     const { text, inActive } = this.props;
-    let opacity = null
+    let color = '#1D1E2C'
     if (inActive === true) {
-      opacity = 0.5
+      color = '#E2E2E2'
     }
     return (
       <View style={{ height: 100, flex: 1, justifyContent: 'flex-start' }}>
-        <Text style={{ alignSelf: 'center', height: 18, marginVertical: 1, opacity: opacity, fontFamily:fonts.hiraKakuProW6, fontSize: 12  }}>{text}</Text>
+
+        <Text style={{ height: 16, marginTop: 4, color: color, textAlign: 'center', fontFamily: fonts.hiraKakuProW6, fontSize: 12 }}>{text}</Text>
+
         {/* {this.renderPlan('', null)}
         {this.renderPlan('', null)}
         {this.renderPlan('', null)}

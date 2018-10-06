@@ -205,7 +205,7 @@ export default class CalendarView extends Component {
 
     return (<View key={item.id} style={{ flex: 1, height: item.height, backgroundColor: 'white', justifyContent: 'center' }}>
       <View style={{ height: 30, justifyContent: 'center' }}>
-        <Text style={{ marginLeft: marginLeft, width: widthLabel, fontSize: 20, textAlign: 'center', color: 'black' , fontFamily: fonts.hiraKakuProW6}}>{MonthNames[month]}月</Text>
+        <Text style={{ marginLeft: marginLeft, width: widthLabel, fontSize: 16, textAlign: 'center', color: '#1D1E2C', fontFamily: fonts.hiraKakuProW6 }}>{MonthNames[month]}月</Text>
       </View>
       <MonthView key={item.id} monthData={item} />
     </View>)
@@ -216,22 +216,22 @@ export default class CalendarView extends Component {
 
     return (
       <View style={styles.container}>
-       {/* <Button
+        {/* <Button
           title='Signout'
           onPress={() => {
             this.flastList.scrollToOffset({y: Math.abs(this.dataCalendar[0].offset), animated: true});
           }}
         /> */}
-        <View style={{ height: 40, backgroundColor: '#F5FCFF', flexDirection: 'row', alignItems: 'center', }}>
+        <View style={{ height: 28, backgroundColor: '#F6F7FA', flexDirection: 'row', justifyContent: 'center', }}>
           {
 
             DayNames.map((value, index) => {
-              let opacity = null
+              let color = '#636E7B'
               if (index === 0 ||
                 index === 6) {
-                opacity = 0.5
+                color = '#E2E2E2'
               }
-              return (<Text key={`${value}_${index}`} style={{ flex: 1, textAlign: 'center', opacity: opacity }}>{value}</Text>)
+              return (<Text key={`${value}_${index}`} style={{ flex: 1, alignSelf: 'center', textAlign: 'center', fontFamily: fonts.hiraKakuProW6, fontSize: 12, color: color }}>{value}</Text>)
             })
           }
         </View>

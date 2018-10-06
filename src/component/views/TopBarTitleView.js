@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { Platform, StyleSheet, Text, View } from 'react-native';
+import fonts from '../../constants/fonts'
 
 export default class TopBarTitleView extends Component {
 
@@ -28,14 +29,16 @@ const styles = StyleSheet.create({
   },
   text: {
     textAlign: 'center',
-    color: '#333333',
-    // marginBottom: 5,
-    fontSize: 24
+    marginTop: 2,
+    fontSize: 16,
+    color:'#1D1E2C',
+    fontFamily: fonts.hiraKakuProW6
   },
   subText: {
     textAlign: 'center',
-    color: '#333333',
-    marginBottom: 2,
-    fontSize: 12
+    color:'#1D1E2C',
+    // marginBottom: 4,
+    fontFamily: fonts.hiraKakuProW3,
+    fontSize: 14
   },
 });

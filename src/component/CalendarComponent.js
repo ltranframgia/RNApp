@@ -5,6 +5,7 @@ import { setRootToLoginScreen } from '../navigation/root';
 import { pushProfile, showModalProfile } from '../navigation/profile';
 import { Loading } from '../utils'
 import CalendarView from './views/calendar/CalendarView'
+import fonts from '../constants/fonts'
 
 const loadingText = Platform.select({
   ios: 'Profile',
