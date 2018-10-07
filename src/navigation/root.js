@@ -45,7 +45,7 @@ export const setRootToHomeScreen = () => Navigation.setRoot({
             }],
             options: {
               bottomTab: {
-                text: 'ダッシュボード',
+                text: 'Home',
                 icon: Images.tab_newsfeed,
                 selectedIcon: Images.tab_newsfeed_active,
               },
@@ -65,7 +65,7 @@ export const setRootToHomeScreen = () => Navigation.setRoot({
                 style: 'light'
               },
               bottomTab: {
-                text: 'カレンダー',
+                text: 'Calendar',
                 icon: Images.tab_schedule,
                 selectedIcon: Images.tab_schedule_active,
               },
@@ -82,7 +82,7 @@ export const setRootToHomeScreen = () => Navigation.setRoot({
             }],
             options: {
               bottomTab: {
-                text: '案件一覧',
+                text: 'Friend',
                 icon: Images.tab_project,
                 selectedIcon: Images.tab_project_active,
               }
@@ -98,7 +98,7 @@ export const setRootToHomeScreen = () => Navigation.setRoot({
             }],
             options: {
               bottomTab: {
-                text: 'お知らせ',
+                text: 'Notification',
                 icon: Images.tab_notification,
                 selectedIcon: Images.tab_notification_active,
                 badge: '3'
@@ -115,7 +115,7 @@ export const setRootToHomeScreen = () => Navigation.setRoot({
             }],
             options: {
               bottomTab: {
-                text: 'プロフィール',
+                text: 'Profile',
                 icon: Images.tab_profile,
                 selectedIcon: Images.tab_profile_active,
                 selectedTextColor: Colors.blue,

@@ -10,8 +10,8 @@ const images = {
   tab_project: require('./images/ic_tab_project.png'),
   tab_project_active: require('./images/ic_tab_project_active.png'),
   splash_bg: require('./images/splash_bg.png'),
-  logo_text: require('./images/logo_text.png'),
-  logo_text_blue: require('./images/logo_text_blue.png'),
+  logo_text: require('./images/ic_settings.png'),
+  logo_text_blue: require('./images/ic_settings.png'),
   back: require('./images/ic_back.png'),
   ic_settings: require('./images/ic_settings.png'),
 };
