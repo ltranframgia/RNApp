@@ -52,13 +52,13 @@ export default class WeekView extends React.PureComponent {
     return (
       <View style={{ flex: 1, justifyContent: 'center', flexDirection: 'row' }}>
         <View style={{ height: 0.5, backgroundColor: 'gray', position: 'absolute', left: 0, right: 0, top: 0, opacity: 0.5 }} />
-        <DayView text={`${dayNames[0]}`} inActive={true} />
-        <DayView text={`${dayNames[1]}`} />
-        <DayView text={`${dayNames[2]}`} />
-        <DayView text={`${dayNames[3]}`} />
-        <DayView text={`${dayNames[4]}`} />
-        <DayView text={`${dayNames[5]}`} />
-        <DayView text={`${dayNames[6]}`} inActive={true} />
+        <DayView onPressDay={this.props.onPressDay} text={`${dayNames[0]}`} inActive={true} />
+        <DayView onPressDay={this.props.onPressDay} text={`${dayNames[1]}`} />
+        <DayView onPressDay={this.props.onPressDay} text={`${dayNames[2]}`} />
+        <DayView onPressDay={this.props.onPressDay} text={`${dayNames[3]}`} />
+        <DayView onPressDay={this.props.onPressDay} text={`${dayNames[4]}`} />
+        <DayView onPressDay={this.props.onPressDay} text={`${dayNames[5]}`} />
+        <DayView onPressDay={this.props.onPressDay} text={`${dayNames[6]}`} inActive={true} />
       </View>
     )
   }

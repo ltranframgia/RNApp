@@ -184,8 +184,6 @@ export default class CalendarView extends Component {
     //   refresh: !this.state.refresh
     // })
   }
-
-
   getItemLayout = (data, index) => {
     if (index < 0) {
       return { length: 0, offset: 0, index }
@@ -207,7 +205,7 @@ export default class CalendarView extends Component {
       <View style={{ height: 30, justifyContent: 'center' }}>
         <Text style={{ marginLeft: marginLeft, width: widthLabel, fontSize: 16, textAlign: 'center', color: '#1D1E2C', fontFamily: fonts.hiraKakuProW6 }}>{MonthNames[month]}月</Text>
       </View>
-      <MonthView key={item.id} monthData={item} />
+      <MonthView onPressDay={this.props.onPressAtDay} key={item.id} monthData={item} />
     </View>)
   }
 

@@ -23,10 +23,10 @@ export default class CalendarMonthView extends React.PureComponent {
     const { year, month, firstDayIndex, numberOfDay } = this.props.monthData.info
 
     return ((<View style={{ flex: 1, backgroundColor: 'white', justifyContent: 'center' }}>
-      <WeekView key={`${year}_${month}_1`} week={{ startDayIndex: firstDayIndex, startDay: 1, month, year }} />
-      <WeekView key={`${year}_${month}_${8 - firstDayIndex}`} week={{ startDayIndex: 0, startDay: (8 - firstDayIndex), numberOfDay, month, year }} />
-      <WeekView key={`${year}_${month}_${15 - firstDayIndex}`} week={{ startDayIndex: 0, startDay: (15 - firstDayIndex), numberOfDay, month, year }} />
-      <WeekView key={`${year}_${month}_${22 - firstDayIndex}`} week={{ startDayIndex: 0, startDay: (22 - firstDayIndex), numberOfDay, month, year }} />
+      <WeekView onPressDay={this.props.onPressDay} key={`${year}_${month}_1`} week={{ startDayIndex: firstDayIndex, startDay: 1, month, year }} />
+      <WeekView onPressDay={this.props.onPressDay} key={`${year}_${month}_${8 - firstDayIndex}`} week={{ startDayIndex: 0, startDay: (8 - firstDayIndex), numberOfDay, month, year }} />
+      <WeekView onPressDay={this.props.onPressDay} key={`${year}_${month}_${15 - firstDayIndex}`} week={{ startDayIndex: 0, startDay: (15 - firstDayIndex), numberOfDay, month, year }} />
+      <WeekView onPressDay={this.props.onPressDay} key={`${year}_${month}_${22 - firstDayIndex}`} week={{ startDayIndex: 0, startDay: (22 - firstDayIndex), numberOfDay, month, year }} />
       {
 
         [4, 5].map(value => {
@@ -37,7 +37,7 @@ export default class CalendarMonthView extends React.PureComponent {
             return null
           }
 
-          return (<WeekView key={`${year}_${month}_${startDay}`} week={{ startDayIndex: 0, startDay, numberOfDay, month, year }} />)
+          return (<WeekView onPressDay={this.props.onPressDay} key={`${year}_${month}_${startDay}`} week={{ startDayIndex: 0, startDay, numberOfDay, month, year }} />)
         })
       }
     </View>)

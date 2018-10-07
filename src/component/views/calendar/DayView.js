@@ -1,7 +1,7 @@
 
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import { Platform, StyleSheet, Text, View, FlatList } from 'react-native';
+import { Platform, StyleSheet, Text, View, FlatList, TouchableOpacity } from 'react-native';
 import fonts from '../../../constants/fonts'
 
 export default class DayView extends React.PureComponent {
@@ -29,6 +29,11 @@ export default class DayView extends React.PureComponent {
 
   }
 
+  handlePress = () => {
+    if (this.props.text) {
+      this.props.onPressDay(this.props.text)
+    }
+  }
 
   renderPlan(text, color) {
     return (
@@ -45,16 +50,19 @@ export default class DayView extends React.PureComponent {
       color = '#E2E2E2'
     }
     return (
-      <View style={{ height: 100, flex: 1, justifyContent: 'flex-start' }}>
+      <TouchableOpacity style={{ height: 100, flex: 1, justifyContent: 'flex-start' }} onPress={this.handlePress.bind(this)}>
 
         <Text style={{ height: 16, marginTop: 4, color: color, textAlign: 'center', fontFamily: fonts.hiraKakuProW6, fontSize: 12 }}>{text}</Text>
 
         {/* {this.renderPlan('', null)}
-        {this.renderPlan('', null)}
-        {this.renderPlan('', null)}
-        {this.renderPlan('', null)} */}
+      {this.renderPlan('', null)}
+      {this.renderPlan('', null)}
+      {this.renderPlan('', null)} */}
+      </TouchableOpacity>
+      // <View style={{ height: 100, flex: 1, justifyContent: 'flex-start' }}>
 
-      </View>
+
+      // </View>
     )
   }
 }

@@ -8,6 +8,7 @@ export default ScreenName = {
   calendar: 'CalendarScreen',
   notification: 'NotificationScreen',
   register: 'RegisterScreen',
+  agenda: 'agendaScreen',
   loadingHud: 'LoadingHUDScreen',
   topBarTitle: 'TopBarTitle',
 }

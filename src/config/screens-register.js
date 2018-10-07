@@ -11,6 +11,7 @@ import ProfileContainer from '../containers/ProfileContainer'
 import CalendarContainer from '../containers/CalendarContainer'
 import NotificationContainer from '../containers/NotificationContainer'
 import RegisterContainer from '../containers/RegisterContainer'
+import AgendaContainer from '../containers/AgendaContainer'
 
 import TopBarTitleView from '../component/views/TopBarTitleView'
 import { LoadingView } from '../utils'
@@ -30,7 +31,7 @@ export function registerScreensWithStore(provider, store) {
   Navigation.registerComponentWithRedux(ScreenName.calendar, () => CalendarContainer, provider, store)
   Navigation.registerComponentWithRedux(ScreenName.notification, () => NotificationContainer, provider, store)
   Navigation.registerComponentWithRedux(ScreenName.register, () => RegisterContainer, provider, store)
-
+  Navigation.registerComponentWithRedux(ScreenName.agenda, () => AgendaContainer, provider, store)
 }
 
 export default { registerScreensWithStore }
