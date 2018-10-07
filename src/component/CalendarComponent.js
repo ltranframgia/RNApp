@@ -21,6 +21,9 @@ export default class CalendarComponent extends Component {
         style: 'dark'
       },
       topBar: {
+        backButton: {
+          visible: false
+        },
         title: {
           component: {
             name: ScreenName.topBarTitle,
