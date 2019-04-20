@@ -5,6 +5,7 @@ import { defautOptions } from './config/options';
 import { registerScreensWithStore } from './config/screens-register';
 import { setRootToLaunchScreen } from './navigation/root';
 import { Reachability } from './utils'
+import SocketManager from './modules/SocketManager'
 
 registerScreensWithStore(Provider, getStore());
 
@@ -18,6 +19,9 @@ Navigation.events().registerAppLaunchedListener(() => {
 
   // options
   Navigation.setDefaultOptions(defautOptions);
+
+  // socket
+  SocketManager.connect()
 
 });
 
