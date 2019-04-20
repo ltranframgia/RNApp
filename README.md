@@ -13,3 +13,25 @@ React Native Navigation Wix (v2): https://github.com/wix/react-native-navigation
 Networking : https://github.com/axios/axios
 
 Config (Environment): https://github.com/luggit/react-native-config
+
+
+# Using socket io
+
+Using socket io in chat app
+
+- Install socket.io
+
+npm run socket.io-client
+
+- Copy file SocketManager.js to modules folder
+
+- In Index.js file.
+
+import SocketManager from './modules/SocketManager'
+
+and connect socket in Navigation.events().registerAppLaunchedListener() 
+
+// socket
+
+  SocketManager.connect()
+  
